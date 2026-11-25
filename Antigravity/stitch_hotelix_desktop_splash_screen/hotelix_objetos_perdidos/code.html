@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Objetos perdidos</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <div class="min-h-[1024px] w-full bg-ivory grid grid-cols-[240px_1fr]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <aside class="min-h-[1024px] bg-forest-green text-ivory py-xl flex flex-col gap-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="px-lg">
+        <span data-design-text-token="display-lg-mobile" class="font-display text-display-lg-mobile text-ivory">Hotelix</span>
+      </div>
+
+      <nav aria-label="Navegación principal" class="flex flex-col gap-xs">
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Inicio</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Indicadores</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Habitaciones</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Reservas</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Calendario</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Huéspedes</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Mantenimiento</a>
+        <a href="#" aria-current="page" data-design-text-token="label-md" class="block px-lg py-sm bg-camel-tint text-deep-navy border-l-2 border-camel font-label text-label-md uppercase focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Objetos perdidos</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Servicios</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Ajustes</a>
+      </nav>
+    </aside>
+
+    <main class="bg-ivory px-xl py-xl flex flex-col gap-lg min-w-0">
+      <header class="flex items-center justify-between gap-md">
+        <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg text-deep-navy m-0">Objetos perdidos</h1>
+
+        <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-lg bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+          <span data-design-text-token="label-md">REGISTRAR OBJETO</span>
+        </button>
+      </header>
+
+      <section aria-label="Filtros de objetos perdidos" class="grid grid-cols-[1fr_180px_180px] gap-md items-end">
+        <div class="flex flex-col gap-xs">
+          <label for="lost-search" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Buscar por descripción o habitación</label>
+          <input id="lost-search" type="search" placeholder="Ej. gafas o 202" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal placeholder:text-stone-gray hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="lost-status" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Estado</label>
+          <select id="lost-status" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+            <option value="Todos">Todos</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Entregado">Entregado</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="lost-since" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Hallazgo desde</label>
+          <input id="lost-since" type="text" value="01/11/2026" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal tabular-nums hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+      </section>
+
+      <p data-design-text-token="body-compact" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">4 objetos · 3 pendientes de devolución · 1 entregado</p>
+
+      <div class="grid grid-cols-[1fr_320px] gap-lg items-start">
+        <section aria-label="Listado de objetos perdidos" class="min-w-0 flex flex-col gap-md">
+          <div class="w-full bg-ivory border-2 border-stone-gray rounded overflow-hidden">
+            <div class="w-full overflow-x-auto">
+              <table class="w-full border-collapse text-left">
+                <thead>
+                  <tr class="border-b-2 border-warm-charcoal">
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-xs font-label text-label-md text-deep-navy text-left">Objeto</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-xs font-label text-label-md text-deep-navy text-right whitespace-nowrap">Habitación</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-xs font-label text-label-md text-deep-navy text-right whitespace-nowrap">Fecha de hallazgo</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-xs font-label text-label-md text-deep-navy text-left whitespace-nowrap">Registrado por</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-xs font-label text-label-md text-deep-navy text-left whitespace-nowrap">Estado</th>
+                    <th scope="col" class="py-md px-xs"><span class="sr-only">Acciones</span></th>
+                  </tr>
+                </thead>
+                <tbody id="lost-tbody" class="divide-y divide-stone-gray">
+                  <tr data-item="Gafas de sol con estuche negro" data-room="202" data-date="20 nov 2026" data-by="Ana Ruiz" data-status="Pendiente" data-location="Recepción · Armario B" class="lost-row bg-camel-tint border-l-2 border-deep-navy hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal">Gafas de sol con estuche negro</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums">202</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums whitespace-nowrap">20 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal whitespace-nowrap">Ana Ruiz</td>
+                    <td class="py-md px-xs">
+                      <span data-design-text-token="body-sm" class="inline-block px-sm py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm whitespace-nowrap">Pendiente</span>
+                    </td>
+                    <td class="py-md px-xs text-right">
+                      <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline whitespace-nowrap hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Ver ficha</button>
+                    </td>
+                  </tr>
+
+                  <tr data-item="Cargador de teléfono USB-C" data-room="104" data-date="19 nov 2026" data-by="Carlos Mena" data-status="Entregado" data-location="Entregado en recepción" class="lost-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal">Cargador de teléfono USB-C</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums">104</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums whitespace-nowrap">19 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal whitespace-nowrap">Carlos Mena</td>
+                    <td class="py-md px-xs">
+                      <span data-design-text-token="body-sm" class="inline-block px-sm py-xs rounded bg-deep-navy text-ivory font-body text-body-sm whitespace-nowrap">Entregado</span>
+                    </td>
+                    <td class="py-md px-xs text-right">
+                      <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline whitespace-nowrap hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Ver ficha</button>
+                    </td>
+                  </tr>
+
+                  <tr data-item="Libro en inglés, tapa azul" data-room="101" data-date="17 nov 2026" data-by="Luis Mena" data-status="Pendiente" data-location="Recepción · Armario A" class="lost-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal">Libro en inglés, tapa azul</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums">101</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums whitespace-nowrap">17 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal whitespace-nowrap">Luis Mena</td>
+                    <td class="py-md px-xs">
+                      <span data-design-text-token="body-sm" class="inline-block px-sm py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm whitespace-nowrap">Pendiente</span>
+                    </td>
+                    <td class="py-md px-xs text-right">
+                      <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline whitespace-nowrap hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Ver ficha</button>
+                    </td>
+                  </tr>
+
+                  <tr data-item="Pañuelo de seda beige" data-room="203" data-date="15 nov 2026" data-by="Ana Ruiz" data-status="Pendiente" data-location="Recepción · Cajón 2" class="lost-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal">Pañuelo de seda beige</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums">203</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal text-right tabular-nums whitespace-nowrap">15 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-xs font-body text-body-md text-warm-charcoal whitespace-nowrap">Ana Ruiz</td>
+                    <td class="py-md px-xs">
+                      <span data-design-text-token="body-sm" class="inline-block px-sm py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm whitespace-nowrap">Pendiente</span>
+                    </td>
+                    <td class="py-md px-xs text-right">
+                      <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline whitespace-nowrap hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Ver ficha</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p id="lost-showing" data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">Mostrando 4 de 4 objetos</p>
+        </section>
+
+        <aside aria-labelledby="lost-detail-title" class="w-full bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md">
+          <div class="flex flex-col gap-sm">
+            <h2 id="lost-detail-title" data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0 text-balance">Gafas de sol con estuche negro</h2>
+
+            <span id="lost-detail-status" data-design-text-token="body-sm" class="inline-block self-start px-md py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm">Pendiente</span>
+          </div>
+
+          <dl class="flex flex-col gap-sm m-0">
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Habitación</dt>
+              <dd id="lost-detail-room" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0 tabular-nums">202</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Fecha de hallazgo</dt>
+              <dd id="lost-detail-date" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0 tabular-nums">20 nov 2026</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Registrado por</dt>
+              <dd id="lost-detail-by" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0">Ana Ruiz</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Ubicación actual</dt>
+              <dd id="lost-detail-location" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0">Recepción · Armario B</dd>
+            </div>
+          </dl>
+
+          <div class="flex flex-col gap-sm pt-sm">
+            <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="w-full h-2xl px-md bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">MARCAR COMO ENTREGADO</span>
+            </button>
+
+            <button type="button" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="w-full h-2xl px-md bg-transparent hover:bg-camel-tint border-2 border-stone-gray text-burgundy rounded font-label text-label-md uppercase flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">EDITAR</span>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var searchInput = document.getElementById('lost-search');
+      var statusSelect = document.getElementById('lost-status');
+      var rows = document.querySelectorAll('.lost-row');
+      var showingEl = document.getElementById('lost-showing');
+      var total = rows.length;
+
+      var detailTitle = document.getElementById('lost-detail-title');
+      var detailStatus = document.getElementById('lost-detail-status');
+      var detailRoom = document.getElementById('lost-detail-room');
+      var detailDate = document.getElementById('lost-detail-date');
+      var detailBy = document.getElementById('lost-detail-by');
+      var detailLocation = document.getElementById('lost-detail-location');
+
+      function applyFilters() {
+        var query = (searchInput.value || '').trim().toLowerCase();
+        var statusVal = statusSelect.value;
+        var visible = 0;
+
+        rows.forEach(function (row) {
+          var item = (row.getAttribute('data-item') || '').toLowerCase();
+          var room = (row.getAttribute('data-room') || '').toLowerCase();
+          var status = row.getAttribute('data-status') || '';
+
+          var matchesQuery = !query || item.indexOf(query) !== -1 || room.indexOf(query) !== -1;
+          var matchesStatus = statusVal === 'Todos' || status === statusVal;
+
+          if (matchesQuery && matchesStatus) {
+            row.classList.remove('hidden');
+            visible += 1;
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+
+        if (showingEl) {
+          showingEl.textContent = 'Mostrando ' + visible + ' de ' + total + ' objetos';
+        }
+      }
+
+      rows.forEach(function (row) {
+        row.addEventListener('click', function () {
+          rows.forEach(function (r) {
+            r.classList.remove('bg-camel-tint', 'border-l-2', 'border-deep-navy');
+          });
+          row.classList.add('bg-camel-tint', 'border-l-2', 'border-deep-navy');
+
+          var status = row.getAttribute('data-status') || 'Pendiente';
+          detailTitle.textContent = row.getAttribute('data-item') || '';
+          detailRoom.textContent = row.getAttribute('data-room') || '';
+          detailDate.textContent = row.getAttribute('data-date') || '';
+          detailBy.textContent = row.getAttribute('data-by') || '';
+          detailLocation.textContent = row.getAttribute('data-location') || '';
+          detailStatus.textContent = status;
+
+          if (status === 'Entregado') {
+            detailStatus.className = 'inline-block self-start px-md py-xs rounded bg-deep-navy text-ivory font-body text-body-sm';
+          } else {
+            detailStatus.className = 'inline-block self-start px-md py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm';
+          }
+        });
+      });
+
+      searchInput.addEventListener('input', applyFilters);
+      statusSelect.addEventListener('change', applyFilters);
+    })();
+  </script>
+
+
+</body></html>

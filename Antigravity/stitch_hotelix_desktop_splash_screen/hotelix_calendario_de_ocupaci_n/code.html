@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Calendario de ocupación</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <div class="min-h-[1024px] w-full bg-ivory grid grid-cols-[240px_1fr]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <aside class="min-h-[1024px] bg-forest-green text-ivory py-xl flex flex-col gap-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="px-lg">
+        <span data-design-text-token="display-lg-mobile" class="font-display text-display-lg-mobile text-ivory">Hotelix</span>
+      </div>
+
+      <nav aria-label="Navegación principal" class="flex flex-col gap-xs">
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Inicio</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Indicadores</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Habitaciones</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Reservas</a>
+        <a href="#" aria-current="page" data-design-text-token="label-md" class="block px-lg py-sm bg-camel-tint text-deep-navy border-l-2 border-camel font-label text-label-md uppercase focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Calendario</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Huéspedes</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Mantenimiento</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Objetos perdidos</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Servicios</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Ajustes</a>
+      </nav>
+    </aside>
+
+    <main class="bg-ivory px-xl py-xl flex flex-col gap-lg min-w-0">
+      <header class="flex flex-col gap-sm">
+        <div class="flex items-center justify-between gap-md flex-wrap">
+          <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg text-deep-navy m-0">Calendario de ocupación</h1>
+
+          <div class="flex items-center gap-sm shrink-0">
+            <button type="button" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="h-2xl px-md bg-transparent hover:bg-camel-tint border-2 border-stone-gray text-burgundy rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">ANTERIOR</span>
+            </button>
+
+            <button type="button" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="h-2xl px-md bg-transparent hover:bg-camel-tint border-2 border-stone-gray text-burgundy rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">SIGUIENTE</span>
+            </button>
+
+            <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-lg bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">NUEVA RESERVA</span>
+            </button>
+          </div>
+        </div>
+
+        <p data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal m-0 tabular-nums">23 nov – 6 dic 2026</p>
+      </header>
+
+      <div class="grid grid-cols-[1fr_300px] gap-lg items-start">
+        <div class="min-w-0 flex flex-col gap-lg">
+          <div class="w-full bg-ivory border-2 border-stone-gray rounded p-md">
+            <div class="w-full overflow-x-auto">
+              <table id="occupancy-grid" class="border-separate border-spacing-1 text-center">
+              <thead>
+                <tr>
+                  <th scope="col" data-design-text-token="label-md" class="sticky left-0 z-10 bg-ivory pr-md text-left font-label text-label-md text-deep-navy align-bottom pb-sm">Hab.</th>
+                  <th scope="col" class="pb-sm">
+                    <div class="mx-auto flex flex-col items-center justify-center border-2 border-deep-navy py-xs" style="width: 40px;">
+                      <span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Lun</span>
+                      <span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">23</span>
+                    </div>
+                  </th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Mar</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">24</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Mié</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">25</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Jue</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">26</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Vie</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">27</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Sáb</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">28</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Dom</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">29</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Lun</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">30</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Mar</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">1</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Mié</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">2</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Jue</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">3</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Vie</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">4</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Sáb</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">5</span></div></th>
+                  <th scope="col" class="pb-sm"><div class="mx-auto flex flex-col items-center justify-center" style="width: 40px;"><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Dom</span><span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy tabular-nums">6</span></div></th>
+                </tr>
+              </thead>
+              <tbody id="occupancy-body">
+                <tr>
+                  <th colspan="15" scope="rowgroup" class="sticky left-0 z-10 bg-ivory text-left pt-sm pb-xs font-label text-label-md text-deep-navy">Planta 1</th>
+                </tr>
+                <tr data-room="101"></tr>
+                <tr data-room="102"></tr>
+                <tr data-room="103"></tr>
+                <tr data-room="104"></tr>
+                <tr>
+                  <th colspan="15" scope="rowgroup" class="sticky left-0 z-10 bg-ivory text-left pt-md pb-xs font-label text-label-md text-deep-navy">Planta 2</th>
+                </tr>
+                <tr data-room="201"></tr>
+                <tr data-room="202"></tr>
+                <tr data-room="203"></tr>
+                <tr data-room="204"></tr>
+              </tbody>
+            </table>
+            </div>
+          </div>
+
+          <div aria-label="Leyenda de estados" class="flex flex-wrap items-center gap-md">
+            <div class="flex items-center gap-sm">
+              <span class="inline-flex items-center justify-center bg-ivory border border-stone-gray" style="width: 24px; height: 24px;" aria-hidden="true"></span>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Disponible</span>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span class="inline-flex items-center justify-center bg-deep-navy text-ivory font-label text-label-md" style="width: 24px; height: 24px;" aria-hidden="true">O</span>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Ocupada</span>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span class="inline-flex items-center justify-center bg-camel-tint border-2 border-dashed border-deep-navy text-deep-navy font-label text-label-md" style="width: 24px; height: 24px;" aria-hidden="true">R</span>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Reserva futura</span>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span class="inline-flex items-center justify-center bg-camel text-deep-navy font-label text-label-md" style="width: 24px; height: 24px;" aria-hidden="true">L</span>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Llegada hoy</span>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span class="inline-flex items-center justify-center bg-forest-green text-ivory font-label text-label-md" style="width: 24px; height: 24px;" aria-hidden="true">S</span>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Salida hoy</span>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span class="inline-flex items-center justify-center bg-burgundy text-ivory font-label text-label-md" style="width: 24px; height: 24px;" aria-hidden="true">F</span>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Fuera de servicio</span>
+            </div>
+          </div>
+        </div>
+
+        <aside aria-labelledby="detail-panel-title" class="w-full bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md">
+          <h2 id="detail-panel-title" data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0">Detalle</h2>
+
+          <p id="detail-empty" data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal m-0 text-pretty">Selecciona una casilla para ver la reserva</p>
+
+          <dl id="detail-content" class="hidden flex-col gap-md m-0">
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Habitación</dt>
+              <dd id="detail-room" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0 tabular-nums">—</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Huésped</dt>
+              <dd id="detail-guest" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0">—</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Fechas</dt>
+              <dd id="detail-dates" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0 tabular-nums">—</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Estado</dt>
+              <dd id="detail-status" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0">—</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var days = [
+        '23 nov', '24 nov', '25 nov', '26 nov', '27 nov', '28 nov', '29 nov',
+        '30 nov', '1 dic', '2 dic', '3 dic', '4 dic', '5 dic', '6 dic'
+      ];
+
+      // Codes: '.' = Disponible, 'O' = Ocupada, 'R' = Reserva futura, 'L' = Llegada hoy, 'S' = Salida hoy, 'F' = Fuera de servicio
+      var schedule = {
+        '101': ['O', 'O', 'O', '.', '.', 'R', 'R', 'R', '.', '.', '.', 'R', 'R', 'R'],
+        '102': ['L', 'O', 'O', 'O', '.', '.', '.', '.', 'R', 'R', 'R', '.', '.', '.'],
+        '103': ['S', '.', '.', 'R', 'R', 'R', 'R', '.', '.', '.', '.', '.', '.', '.'],
+        '104': ['F', 'F', 'F', '.', '.', '.', '.', 'R', 'R', 'R', 'R', '.', '.', '.'],
+        '201': ['O', 'O', '.', '.', '.', 'R', 'R', 'R', 'R', '.', '.', '.', '.', '.'],
+        '202': ['.', '.', 'R', 'R', 'R', 'R', '.', '.', '.', '.', 'R', 'R', 'R', '.'],
+        '203': ['L', 'O', 'O', 'O', 'O', '.', '.', '.', '.', 'R', 'R', 'R', '.', '.'],
+        '204': ['O', 'O', 'O', 'O', 'O', '.', '.', '.', 'R', 'R', 'R', 'R', '.', '.']
+      };
+
+      var reservations = {
+        '101': {
+          '0-2': { guest: 'Carmen Velasco', dates: '21 nov – 26 nov 2026', status: 'Ocupada' },
+          '5-7': { guest: 'Andrés Montoya', dates: '28 nov – 1 dic 2026', status: 'Reserva futura' },
+          '11-13': { guest: 'Beatriz Soler', dates: '4 dic – 7 dic 2026', status: 'Reserva futura' }
+        },
+        '102': {
+          '0-3': { guest: 'Mateo Serrano', dates: '23 nov – 27 nov 2026', status: 'Llegada hoy' },
+          '8-10': { guest: 'Isabel Paredes', dates: '1 dic – 4 dic 2026', status: 'Reserva futura' }
+        },
+        '103': {
+          '0-0': { guest: 'Diego Santamaría', dates: '20 nov – 23 nov 2026', status: 'Salida hoy' },
+          '3-6': { guest: 'Patricia Luna', dates: '26 nov – 30 nov 2026', status: 'Reserva futura' }
+        },
+        '104': {
+          '0-2': { guest: 'Sin huésped (Revisión eléctrica)', dates: '23 nov – 25 nov 2026', status: 'Fuera de servicio' },
+          '7-10': { guest: 'Fernando Ibarra', dates: '30 nov – 4 dic 2026', status: 'Reserva futura' }
+        },
+        '201': {
+          '0-1': { guest: 'Lucía Valverde', dates: '22 nov – 25 nov 2026', status: 'Ocupada' },
+          '5-8': { guest: 'Hugo Mendoza', dates: '28 nov – 2 dic 2026', status: 'Reserva futura' }
+        },
+        '202': {
+          '2-5': { guest: 'Valeria Cortés', dates: '25 nov – 29 nov 2026', status: 'Reserva futura' },
+          '10-12': { guest: 'Raúl Benítez', dates: '3 dic – 6 dic 2026', status: 'Reserva futura' }
+        },
+        '203': {
+          '0-4': { guest: 'Javier Morales', dates: '23 nov – 28 nov 2026', status: 'Llegada hoy' },
+          '9-11': { guest: 'Nuria Campos', dates: '2 dic – 5 dic 2026', status: 'Reserva futura' }
+        },
+        '204': {
+          '0-4': { guest: 'Elena Navarro', dates: '23 nov – 28 nov 2026', status: 'Ocupada' },
+          '8-11': { guest: 'Tomás Quiroga', dates: '1 dic – 5 dic 2026', status: 'Reserva futura' }
+        }
+      };
+
+      var stateClasses = {
+        '.': 'bg-ivory border border-stone-gray text-warm-charcoal',
+        'O': 'bg-deep-navy text-ivory',
+        'R': 'bg-camel-tint border-2 border-dashed border-deep-navy text-deep-navy',
+        'L': 'bg-camel text-deep-navy',
+        'S': 'bg-forest-green text-ivory',
+        'F': 'bg-burgundy text-ivory'
+      };
+
+      var stateNames = {
+        '.': 'Disponible',
+        'O': 'Ocupada',
+        'R': 'Reserva futura',
+        'L': 'Llegada hoy',
+        'S': 'Salida hoy',
+        'F': 'Fuera de servicio'
+      };
+
+      function findReservation(room, dayIdx) {
+        var roomRes = reservations[room] || {};
+        var keys = Object.keys(roomRes);
+        for (var i = 0; i < keys.length; i++) {
+          var parts = keys[i].split('-');
+          var start = parseInt(parts[0], 10);
+          var end = parseInt(parts[1], 10);
+          if (dayIdx >= start && dayIdx <= end) {
+            return roomRes[keys[i]];
+          }
+        }
+        return null;
+      }
+
+      var emptyEl = document.getElementById('detail-empty');
+      var contentEl = document.getElementById('detail-content');
+      var roomEl = document.getElementById('detail-room');
+      var guestEl = document.getElementById('detail-guest');
+      var datesEl = document.getElementById('detail-dates');
+      var statusEl = document.getElementById('detail-status');
+      var activeBtn = null;
+
+      Object.keys(schedule).forEach(function (room) {
+        var row = document.querySelector('tr[data-room="' + room + '"]');
+        if (!row) return;
+
+        var th = document.createElement('th');
+        th.setAttribute('scope', 'row');
+        th.className = 'sticky left-0 z-10 bg-ivory pr-md text-left font-label text-label-md text-deep-navy tabular-nums';
+        th.textContent = room;
+        row.appendChild(th);
+
+        schedule[room].forEach(function (code, idx) {
+          var td = document.createElement('td');
+          td.className = 'p-0';
+
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.style.width = '40px';
+          btn.style.height = '40px';
+          var todayRing = idx === 0 ? ' outline outline-2 outline-deep-navy -outline-offset-2' : '';
+          btn.className = 'inline-flex items-center justify-center font-label text-label-md cursor-pointer focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 ' + stateClasses[code] + todayRing;
+          btn.textContent = code === '.' ? '' : code;
+          btn.setAttribute('aria-label', 'Habitación ' + room + ', ' + days[idx] + ', ' + stateNames[code]);
+
+          btn.addEventListener('click', function () {
+            if (activeBtn) {
+              activeBtn.classList.remove('ring-2', 'ring-burgundy');
+            }
+            activeBtn = btn;
+            btn.classList.add('ring-2', 'ring-burgundy');
+
+            var info = findReservation(room, idx);
+            emptyEl.classList.add('hidden');
+            contentEl.classList.remove('hidden');
+            contentEl.classList.add('flex');
+
+            roomEl.textContent = 'Habitación ' + room;
+            guestEl.textContent = info ? info.guest : 'Sin reserva asignada';
+            datesEl.textContent = info ? info.dates : days[idx] + ' 2026';
+            statusEl.textContent = stateNames[code];
+          });
+
+          td.appendChild(btn);
+          row.appendChild(td);
+        });
+      });
+    })();
+  </script>
+
+
+</body></html>

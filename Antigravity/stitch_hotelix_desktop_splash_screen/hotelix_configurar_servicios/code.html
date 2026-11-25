@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Configurar servicios</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <main class="min-h-[1024px] w-full bg-ivory grid place-items-center px-md py-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <section aria-labelledby="services-title" class="w-full flex flex-col gap-xl" style="max-width: 720px;">
+      <header class="flex flex-col gap-sm">
+        <h1 id="services-title" data-design-text-token="display-lg" class="font-display text-display-lg text-deep-navy m-0 text-balance">Configura los servicios de tu hotel</h1>
+        <p data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal m-0 text-pretty">Elige los servicios que ofrece tu hotel. Podrás cambiarlos más adelante en Ajustes.</p>
+      </header>
+
+      <form action="#" method="post" class="flex flex-col gap-lg" novalidate>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+          <label class="service-card flex items-center gap-md p-md bg-camel-tint border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="desayuno" checked class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Desayuno</span>
+          </label>
+
+          <label class="service-card flex items-center gap-md p-md bg-ivory border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="comidas-habitacion" class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Comidas a la habitación</span>
+          </label>
+
+          <label class="service-card flex items-center gap-md p-md bg-ivory border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="lavanderia" class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Lavandería</span>
+          </label>
+
+          <label class="service-card flex items-center gap-md p-md bg-ivory border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="estacionamiento" class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Estacionamiento</span>
+          </label>
+
+          <label class="service-card flex items-center gap-md p-md bg-ivory border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="gimnasio" class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Gimnasio</span>
+          </label>
+
+          <label class="service-card flex items-center gap-md p-md bg-ivory border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="spa" class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Spa</span>
+          </label>
+
+          <label class="service-card flex items-center gap-md p-md bg-ivory border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="traslado-aeropuerto" class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Traslado al aeropuerto</span>
+          </label>
+
+          <label class="service-card flex items-center gap-md p-md bg-camel-tint border-2 border-stone-gray rounded cursor-pointer hover:border-warm-charcoal transition-colors duration-state-change ease-state-change">
+            <input type="checkbox" name="services" value="wifi-premium" checked class="service-checkbox w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Wi-Fi premium</span>
+          </label>
+        </div>
+
+        <p id="services-count" data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">2 servicios seleccionados</p>
+
+        <div class="flex justify-end pt-sm">
+          <button type="submit" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-lg bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+            <span data-design-text-token="label-md">GUARDAR Y CONTINUAR</span>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var cards = document.querySelectorAll('.service-card');
+      var countEl = document.getElementById('services-count');
+
+      function updateState() {
+        var selected = 0;
+        cards.forEach(function (card) {
+          var cb = card.querySelector('.service-checkbox');
+          if (!cb) return;
+          if (cb.checked) {
+            selected += 1;
+            card.classList.remove('bg-ivory');
+            card.classList.add('bg-camel-tint');
+          } else {
+            card.classList.remove('bg-camel-tint');
+            card.classList.add('bg-ivory');
+          }
+        });
+        if (countEl) {
+          countEl.textContent = selected === 1
+            ? '1 servicio seleccionado'
+            : selected + ' servicios seleccionados';
+        }
+      }
+
+      cards.forEach(function (card) {
+        var cb = card.querySelector('.service-checkbox');
+        if (cb) {
+          cb.addEventListener('change', updateState);
+        }
+      });
+    })();
+  </script>
+
+
+</body></html>

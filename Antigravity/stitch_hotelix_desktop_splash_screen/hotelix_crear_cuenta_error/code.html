@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Crear cuenta</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <main class="min-h-[1024px] w-full bg-ivory grid place-items-center px-md py-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <section aria-labelledby="register-title" class="w-full bg-ivory border-2 border-stone-gray rounded p-xl flex flex-col gap-lg" style="max-width: 480px;">
+      <div role="alert" class="bg-ivory border-2 border-burgundy rounded p-md flex flex-col gap-xs">
+        <p data-design-text-token="label-md" class="font-label text-label-md normal-case text-burgundy m-0">No se pudo crear la cuenta</p>
+        <p data-design-text-token="body-compact" class="font-body text-body-compact text-warm-charcoal m-0 text-pretty">Ya hay una cuenta con este correo. Inicia sesión o usa otro correo.</p>
+      </div>
+
+      <header class="flex flex-col gap-sm">
+        <h1 id="register-title" data-design-text-token="headline-lg" class="font-headline text-headline-lg text-deep-navy m-0">Crear cuenta</h1>
+        <p data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal m-0 text-pretty">Registra tu hotel para empezar a gestionarlo.</p>
+      </header>
+
+      <form action="#" method="post" class="flex flex-col gap-md" novalidate>
+        <div class="flex flex-col gap-xs">
+          <label for="register-name" data-design-text-token="label-md" class="font-label text-label-md normal-case text-deep-navy">Nombre completo</label>
+          <input id="register-name" name="full_name" type="text" autocomplete="name" value="Ana Ruiz" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="register-hotel" data-design-text-token="label-md" class="font-label text-label-md normal-case text-deep-navy">Nombre del hotel</label>
+          <input id="register-hotel" name="hotel_name" type="text" value="Hotel Villa Serena" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="register-email" data-design-text-token="label-md" class="font-label text-label-md normal-case text-deep-navy">Correo electrónico</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" value="ana@villaserena.es" aria-invalid="true" class="w-full h-2xl px-md bg-ivory border-2 border-burgundy rounded font-body text-body-md text-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="register-password" data-design-text-token="label-md" class="font-label text-label-md normal-case text-deep-navy">Contraseña</label>
+          <input id="register-password" name="password" type="password" value autocomplete="new-password" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="register-confirm-password" data-design-text-token="label-md" class="font-label text-label-md normal-case text-deep-navy">Confirmar contraseña</label>
+          <input id="register-confirm-password" name="confirm_password" type="password" value autocomplete="new-password" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="pt-sm">
+          <button type="submit" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="w-full h-2xl bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+            <span data-design-text-token="label-md">CREAR CUENTA</span>
+          </button>
+        </div>
+      </form>
+
+      <p class="text-center font-body text-body-compact text-warm-charcoal m-0">
+        <span data-design-text-token="body-compact">¿Ya tienes cuenta?</span>
+        <a href="#" data-design-text-token="body-compact" class="text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Inicia sesión</a>
+      </p>
+    </section>
+  </main>
+
+
+</body></html>

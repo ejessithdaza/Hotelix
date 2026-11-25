@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Servicios</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <div class="min-h-[1024px] w-full bg-ivory grid grid-cols-[240px_1fr]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <aside class="min-h-[1024px] bg-forest-green text-ivory py-xl flex flex-col gap-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="px-lg">
+        <span data-design-text-token="display-lg-mobile" class="font-display text-display-lg-mobile text-ivory">Hotelix</span>
+      </div>
+
+      <nav aria-label="Navegación principal" class="flex flex-col gap-xs">
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Inicio</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Indicadores</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Habitaciones</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Reservas</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Calendario</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Huéspedes</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Mantenimiento</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Objetos perdidos</a>
+        <a href="#" aria-current="page" data-design-text-token="label-md" class="block px-lg py-sm bg-camel-tint text-deep-navy border-l-2 border-camel font-label text-label-md uppercase focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Servicios</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Ajustes</a>
+      </nav>
+    </aside>
+
+    <main class="bg-ivory px-xl py-xl flex flex-col gap-lg min-w-0">
+      <header class="flex items-center justify-between gap-md">
+        <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg text-deep-navy m-0">Servicios</h1>
+
+        <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-lg bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+          <span data-design-text-token="label-md">CONFIGURAR SERVICIOS</span>
+        </button>
+      </header>
+
+      <section aria-label="Filtros y estado vacío de servicios" class="flex flex-col gap-md">
+        <div class="grid grid-cols-[1fr_200px] gap-md items-end">
+          <div class="flex flex-col gap-xs">
+            <label for="services-search" data-design-text-token="label-md" class="font-label text-label-md normal-case text-deep-navy">Buscar servicio</label>
+            <input id="services-search" type="search" placeholder="Ej. desayuno o spa" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal placeholder:text-stone-gray hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+          </div>
+
+          <div class="flex flex-col gap-xs">
+            <label for="services-status" data-design-text-token="label-md" class="font-label text-label-md normal-case text-deep-navy">Estado</label>
+            <select id="services-status" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+              <option value="Todos" selected>Todos</option>
+              <option value="Activos">Activos</option>
+              <option value="Desactivados">Desactivados</option>
+            </select>
+          </div>
+        </div>
+
+        <p data-design-text-token="body-compact" class="font-body text-body-compact text-warm-charcoal m-0 tabular-nums">0 servicios · 0 activos</p>
+
+        <div class="w-full bg-ivory border-2 border-stone-gray rounded p-2xl flex flex-col items-center text-center gap-md">
+          <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-gold shrink-0">
+            <line x1="4" y1="21" x2="4" y2="14"></line>
+            <line x1="4" y1="10" x2="4" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="3"></line>
+            <line x1="20" y1="21" x2="20" y2="16"></line>
+            <line x1="20" y1="12" x2="20" y2="3"></line>
+            <line x1="1" y1="14" x2="7" y2="14"></line>
+            <line x1="9" y1="8" x2="15" y2="8"></line>
+            <line x1="17" y1="16" x2="23" y2="16"></line>
+          </svg>
+
+          <h2 data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0">Todavía no hay servicios configurados</h2>
+
+          <p data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal m-0 max-w-prose text-pretty">Elige los servicios que ofrece tu hotel y define su precio. Podrás cambiarlos después.</p>
+
+          <a href="#" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change">Ir a la configuración inicial</a>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 max-w-prose text-pretty">Los servicios desactivados no aparecen al crear una estancia ni al registrar consumos.</p>
+        </div>
+
+        <p data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">Mostrando 0 de 0 servicios</p>
+      </section>
+    </main>
+  </div>
+
+
+</body></html>

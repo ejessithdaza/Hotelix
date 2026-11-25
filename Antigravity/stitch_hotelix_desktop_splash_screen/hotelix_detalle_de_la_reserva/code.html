@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Detalle de la reserva</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <div class="min-h-[1024px] w-full bg-ivory grid grid-cols-[240px_1fr]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <aside class="min-h-[1024px] bg-forest-green text-ivory py-xl flex flex-col gap-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="px-lg">
+        <span data-design-text-token="display-lg-mobile" class="font-display text-display-lg-mobile text-ivory">Hotelix</span>
+      </div>
+
+      <nav aria-label="Navegación principal" class="flex flex-col gap-xs">
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Inicio</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Indicadores</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Habitaciones</a>
+        <a href="#" aria-current="page" data-design-text-token="label-md" class="block px-lg py-sm bg-camel-tint text-deep-navy border-l-2 border-camel font-label text-label-md uppercase focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Reservas</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Calendario</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Huéspedes</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Mantenimiento</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Objetos perdidos</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Servicios</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Ajustes</a>
+      </nav>
+    </aside>
+
+    <main class="bg-ivory px-xl py-xl flex flex-col gap-lg min-w-0">
+      <header class="flex flex-col gap-xs">
+        <div class="flex items-center justify-between gap-md">
+          <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg text-deep-navy m-0">Detalle de la reserva</h1>
+
+          <div class="flex items-center gap-md shrink-0">
+            <button type="button" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="h-2xl px-lg bg-transparent hover:bg-camel-tint border-2 border-stone-gray rounded font-label text-label-md text-burgundy uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">VOLVER</span>
+            </button>
+
+            <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-lg bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">VER FACTURA</span>
+            </button>
+          </div>
+        </div>
+
+        <p data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal m-0 tabular-nums">Estancia finalizada · 19 nov – 22 nov 2026</p>
+      </header>
+
+      <!-- Tarjeta de resumen -->
+      <section aria-label="Resumen de la reserva" class="bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md">
+        <div class="flex items-start justify-between gap-md">
+          <dl class="m-0 grid grid-cols-3 gap-x-xl gap-y-md flex-1">
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Huésped</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy">Pablo Rey</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Habitación</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy tabular-nums">204 · Doble</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Llegada</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy tabular-nums">19 nov 2026</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Salida</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy tabular-nums">22 nov 2026</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Noches</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy tabular-nums">3</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Tarifa por noche</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy tabular-nums">150,00 €</dd>
+            </div>
+          </dl>
+
+          <span data-design-text-token="label-md" class="px-md py-xs bg-camel-tint text-warm-charcoal rounded font-label text-label-md whitespace-nowrap shrink-0">Finalizada</span>
+        </div>
+      </section>
+
+      <!-- Contacto y Preferencias -->
+      <div class="grid grid-cols-2 gap-lg items-stretch">
+        <section aria-labelledby="contacto-title" class="bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md h-full">
+          <h2 id="contacto-title" data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0">Contacto</h2>
+
+          <dl class="m-0 flex flex-col gap-md">
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Correo</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy">pablo.rey@correo.es</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Teléfono</dt>
+              <dd data-design-text-token="label-md" class="m-0 font-label text-label-md text-deep-navy tabular-nums">+34 612 000 555</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="preferencias-title" class="bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md h-full">
+          <h2 id="preferencias-title" data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0">Preferencias</h2>
+
+          <div class="grid grid-cols-2 gap-x-md gap-y-sm">
+            <label class="inline-flex items-center gap-sm pointer-events-none select-none">
+              <input type="checkbox" tabindex="-1" aria-disabled="true" class="w-5 h-5 rounded-sm border-2 border-stone-gray bg-ivory text-deep-navy focus:ring-0">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Lejos del ascensor</span>
+            </label>
+
+            <label class="inline-flex items-center gap-sm pointer-events-none select-none">
+              <input type="checkbox" tabindex="-1" aria-disabled="true" class="w-5 h-5 rounded-sm border-2 border-stone-gray bg-ivory text-deep-navy focus:ring-0">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Desayuno incluido</span>
+            </label>
+
+            <label class="inline-flex items-center gap-sm pointer-events-none select-none">
+              <input type="checkbox" checked tabindex="-1" aria-disabled="true" class="w-5 h-5 rounded-sm border-2 border-deep-navy bg-deep-navy text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Cama específica</span>
+            </label>
+
+            <label class="inline-flex items-center gap-sm pointer-events-none select-none">
+              <input type="checkbox" tabindex="-1" aria-disabled="true" class="w-5 h-5 rounded-sm border-2 border-stone-gray bg-ivory text-deep-navy focus:ring-0">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Accesibilidad</span>
+            </label>
+          </div>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 text-pretty">Preferencias guardadas en el historial del huésped.</p>
+        </section>
+      </div>
+
+      <!-- Alojamiento -->
+      <section aria-labelledby="alojamiento-title" class="bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md">
+        <h2 id="alojamiento-title" data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0">Alojamiento</h2>
+
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="border-b-2 border-warm-charcoal">
+              <th scope="col" class="py-sm pr-md text-left font-label text-label-md text-deep-navy">
+                <span data-design-text-token="label-md">Concepto</span>
+              </th>
+              <th scope="col" class="py-sm px-md text-right font-label text-label-md text-deep-navy whitespace-nowrap">
+                <span data-design-text-token="label-md">Noches</span>
+              </th>
+              <th scope="col" class="py-sm px-md text-right font-label text-label-md text-deep-navy whitespace-nowrap">
+                <span data-design-text-token="label-md">Tarifa</span>
+              </th>
+              <th scope="col" class="py-sm pl-md text-right font-label text-label-md text-deep-navy whitespace-nowrap">
+                <span data-design-text-token="label-md">Importe</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-stone-gray hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+              <td data-design-text-token="body-md" class="py-md pr-md font-body text-body-md text-warm-charcoal">Alojamiento, habitación 204</td>
+              <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums whitespace-nowrap">3</td>
+              <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums whitespace-nowrap">150,00 €</td>
+              <td data-design-text-token="body-md" class="py-md pl-md font-body text-body-md text-warm-charcoal text-right tabular-nums whitespace-nowrap">450,00 €</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="flex items-baseline justify-between gap-md pt-xs">
+          <span data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Total de alojamiento</span>
+          <span data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy tabular-nums">450,00 €</span>
+        </div>
+
+        <p data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 text-pretty">Para ver los servicios consumidos y el total con cargos, abre la factura.</p>
+      </section>
+
+      <!-- Registro de la estancia -->
+      <section aria-labelledby="registro-title" class="bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md">
+        <h2 id="registro-title" data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0">Registro de la estancia</h2>
+
+        <ul class="m-0 pl-0 list-none flex flex-col gap-sm">
+          <li data-design-text-token="body-compact" class="font-body text-body-compact text-warm-charcoal">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-deep-navy tabular-nums">19 nov</span> · Check-in registrado
+          </li>
+          <li data-design-text-token="body-compact" class="font-body text-body-compact text-warm-charcoal">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-deep-navy tabular-nums">22 nov</span> · Check-out registrado
+          </li>
+          <li data-design-text-token="body-compact" class="font-body text-body-compact text-warm-charcoal">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm text-deep-navy tabular-nums">22 nov</span> · Estancia finalizada
+          </li>
+        </ul>
+      </section>
+
+      <p data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">Reserva creada el 14 nov 2026.</p>
+    </main>
+  </div>
+
+
+</body></html>
