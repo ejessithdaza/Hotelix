@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="rootPane"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.SplashController"
+      styleClass="splash-root"
+      focusTraversable="true">
+
+    <!-- Top spacer (1fr equivalent) -->
+    <Region VBox.vgrow="ALWAYS" prefHeight="0" minHeight="0"/>
+
+    <!-- Center brand section -->
+    <VBox styleClass="splash-center">
+        <Label text="Hotelix" styleClass="splash-title"/>
+        <Region styleClass="splash-divider"/>
+        <Label text="Gestión hotelera" styleClass="splash-subtitle"/>
+    </VBox>
+
+    <!-- Bottom footer section (1fr equivalent, aligned bottom-center) -->
+    <StackPane VBox.vgrow="ALWAYS" prefHeight="0" minHeight="0" styleClass="splash-footer">
+        <Label fx:id="promptLabel" text="Presiona cualquier tecla para continuar" styleClass="splash-prompt"/>
+    </StackPane>
+
+</VBox>

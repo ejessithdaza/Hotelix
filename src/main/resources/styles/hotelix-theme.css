@@ -1,0 +1,55 @@
+/* Hotelix Design System - Base Theme & Splash Styles */
+
+.root {
+    -fx-background-color: #F5F0E6;
+    -fx-font-family: "Maitree", serif;
+}
+
+.splash-root {
+    -fx-background-color: #F5F0E6;
+    -fx-padding: 32px;
+}
+
+.splash-center {
+    -fx-alignment: center;
+    -fx-spacing: 24px;
+}
+
+.splash-title {
+    -fx-font-family: "Elsie Swash Caps", serif;
+    -fx-font-size: 96px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #1B2A41;
+    -fx-padding: 0;
+}
+
+.splash-divider {
+    -fx-background-color: #C8A97E;
+    -fx-min-width: 120px;
+    -fx-pref-width: 120px;
+    -fx-max-width: 120px;
+    -fx-min-height: 2px;
+    -fx-pref-height: 2px;
+    -fx-max-height: 2px;
+}
+
+.splash-subtitle {
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #2B2622;
+    -fx-padding: 0;
+}
+
+.splash-footer {
+    -fx-alignment: bottom-center;
+    -fx-padding: 0 0 16px 0;
+}
+
+.splash-prompt {
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6D2A36;
+    -fx-padding: 0;
+}
