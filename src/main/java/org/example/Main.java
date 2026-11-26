@@ -12,6 +12,7 @@ import org.example.controllers.HomeController;
 import org.example.controllers.LoginController;
 import org.example.controllers.OccupancyCalendarController;
 import org.example.controllers.RegisterController;
+import org.example.controllers.RoomsController;
 import org.example.controllers.SplashController;
 import org.example.ui.FontRegistry;
 
@@ -83,6 +84,14 @@ public class Main extends Application {
     private void showHomeView() {
         FXMLLoader loader = switchView("/fxml/home-view.fxml", "Hotelix — Inicio");
         HomeController controller = loader.getController();
+        controller.setOnNavigateRoomsHandler(this::showRoomsView);
+        controller.setOnNavigateCalendarHandler(this::showOccupancyCalendarView);
+    }
+
+    private void showRoomsView() {
+        FXMLLoader loader = switchView("/fxml/rooms-view.fxml", "Hotelix — Habitaciones");
+        RoomsController controller = loader.getController();
+        controller.setOnNavigateHomeHandler(this::showHomeView);
         controller.setOnNavigateCalendarHandler(this::showOccupancyCalendarView);
     }
 
@@ -90,6 +99,7 @@ public class Main extends Application {
         FXMLLoader loader = switchView("/fxml/occupancy-calendar-view.fxml", "Hotelix — Calendario de ocupación");
         OccupancyCalendarController controller = loader.getController();
         controller.setOnNavigateHomeHandler(this::showHomeView);
+        controller.setOnNavigateRoomsHandler(this::showRoomsView);
     }
 
     private FXMLLoader switchView(String fxmlPath, String windowTitle) {

@@ -652,3 +652,82 @@
 .detail-field-group {
     -fx-spacing: 4px;
 }
+
+/* Rooms Screen & Shared Controls */
+
+.hotelix-select {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-pref-height: 48px;
+    -fx-min-height: 48px;
+    -fx-max-height: 48px;
+    -fx-padding: 0 8px 0 8px;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+    -fx-cursor: hand;
+}
+
+.hotelix-select:hover {
+    -fx-border-color: #2B2622;
+}
+
+.hotelix-select:focused {
+    -fx-border-color: #1B2A41;
+}
+
+.hotelix-select .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2B2622;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+}
+
+.hotelix-select-popup .list-view {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+}
+
+.hotelix-select .list-view .list-cell {
+    -fx-background-color: #F5F0E6;
+    -fx-text-fill: #2B2622;
+    -fx-padding: 8px 16px 8px 16px;
+}
+
+.hotelix-select .list-view .list-cell:hover,
+.hotelix-select .list-view .list-cell:selected {
+    -fx-background-color: #ECE2D1;
+    -fx-text-fill: #1B2A41;
+}
+
+.table-card {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 4px;
+}
+
+.status-badge-maintenance {
+    -fx-background-color: #ECE2D1;
+    -fx-text-fill: #2B2622;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 13px;
+    -fx-padding: 4px 16px 4px 16px;
+    -fx-background-radius: 12px;
+}
+
+.status-badge-out-of-service {
+    -fx-background-color: #6D2A36;
+    -fx-text-fill: #F5F0E6;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 13px;
+    -fx-padding: 4px 16px 4px 16px;
+    -fx-background-radius: 12px;
+}

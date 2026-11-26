@@ -25,7 +25,7 @@
             <VBox styleClass="sidebar-nav">
                 <Button fx:id="navHomeButton" text="INICIO" maxWidth="Infinity" onAction="#handleNavHome" styleClass="sidebar-item"/>
                 <Button fx:id="navIndicatorsButton" text="INDICADORES" maxWidth="Infinity" styleClass="sidebar-item"/>
-                <Button fx:id="navRoomsButton" text="HABITACIONES" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navRoomsButton" text="HABITACIONES" maxWidth="Infinity" onAction="#handleNavRooms" styleClass="sidebar-item"/>
                 <Button fx:id="navReservationsButton" text="RESERVAS" maxWidth="Infinity" styleClass="sidebar-item"/>
                 <Button fx:id="navCalendarButton" text="CALENDARIO" maxWidth="Infinity" styleClass="sidebar-item, sidebar-item-active"/>
                 <Button fx:id="navGuestsButton" text="HUÉSPEDES" maxWidth="Infinity" styleClass="sidebar-item"/>

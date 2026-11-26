@@ -49,6 +49,7 @@ public class HomeController {
     private TableColumn<RecentReservationRow, String> statusColumn;
 
     private Runnable onNewReservationHandler;
+    private Runnable onNavigateRoomsHandler;
     private Runnable onNavigateCalendarHandler;
 
     @FXML
@@ -114,6 +115,13 @@ public class HomeController {
     }
 
     @FXML
+    private void handleNavRooms() {
+        if (onNavigateRoomsHandler != null) {
+            onNavigateRoomsHandler.run();
+        }
+    }
+
+    @FXML
     private void handleNavCalendar() {
         if (onNavigateCalendarHandler != null) {
             onNavigateCalendarHandler.run();
@@ -122,6 +130,10 @@ public class HomeController {
 
     public void setOnNewReservationHandler(Runnable onNewReservationHandler) {
         this.onNewReservationHandler = onNewReservationHandler;
+    }
+
+    public void setOnNavigateRoomsHandler(Runnable onNavigateRoomsHandler) {
+        this.onNavigateRoomsHandler = onNavigateRoomsHandler;
     }
 
     public void setOnNavigateCalendarHandler(Runnable onNavigateCalendarHandler) {
