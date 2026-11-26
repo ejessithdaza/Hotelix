@@ -218,3 +218,32 @@
     -fx-alignment: center;
     -fx-spacing: 6px;
 }
+
+/* Register Screen */
+
+.register-scroll {
+    -fx-background-color: #F5F0E6;
+    -fx-background: #F5F0E6;
+    -fx-border-color: transparent;
+}
+
+.register-scroll > .viewport {
+    -fx-background-color: #F5F0E6;
+}
+
+.register-header {
+    -fx-alignment: center-left;
+    -fx-spacing: 8px;
+}
+
+.register-form {
+    -fx-spacing: 16px;
+}
+
+.form-group-compact {
+    -fx-spacing: 4px;
+}
+
+.register-submit-wrapper {
+    -fx-padding: 8px 0 0 0;
+}

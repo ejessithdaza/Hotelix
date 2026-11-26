@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.example.controllers.LoginController;
+import org.example.controllers.RegisterController;
 import org.example.controllers.SplashController;
 import org.example.ui.FontRegistry;
 
@@ -56,20 +58,33 @@ public class Main extends Application {
     }
 
     private void showLoginView() {
+        FXMLLoader loader = switchView("/fxml/login-view.fxml", "Hotelix — Iniciar sesión");
+        LoginController controller = loader.getController();
+        controller.setOnRegisterHandler(this::showRegisterView);
+    }
+
+    private void showRegisterView() {
+        FXMLLoader loader = switchView("/fxml/register-view.fxml", "Hotelix — Crear cuenta");
+        RegisterController controller = loader.getController();
+        controller.setOnLoginHandler(this::showLoginView);
+    }
+
+    private FXMLLoader switchView(String fxmlPath, String windowTitle) {
         try {
-            FXMLLoader loginLoader = createLoader("/fxml/login-view.fxml");
-            Parent loginRoot = loginLoader.load();
-            loginRoot.setOpacity(0.0);
+            FXMLLoader loader = createLoader(fxmlPath);
+            Parent root = loader.load();
+            root.setOpacity(0.0);
 
-            mainScene.setRoot(loginRoot);
-            primaryStage.setTitle("Hotelix — Iniciar sesión");
+            mainScene.setRoot(root);
+            primaryStage.setTitle(windowTitle);
 
-            FadeTransition fadeIn = new FadeTransition(TRANSITION_DURATION, loginRoot);
+            FadeTransition fadeIn = new FadeTransition(TRANSITION_DURATION, root);
             fadeIn.setFromValue(0.0);
             fadeIn.setToValue(1.0);
             fadeIn.play();
+            return loader;
         } catch (IOException e) {
-            throw new IllegalStateException("Unable to load login view", e);
+            throw new IllegalStateException("Unable to load view: " + fxmlPath, e);
         }
     }
 
