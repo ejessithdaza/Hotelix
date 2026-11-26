@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controllers.HomeController"
+            styleClass="app-shell">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox prefWidth="240" minWidth="240" maxWidth="240" styleClass="sidebar">
+            <HBox styleClass="sidebar-brand">
+                <Label text="Hotelix" styleClass="display-lg-sm"/>
+            </HBox>
+
+            <VBox styleClass="sidebar-nav">
+                <Button fx:id="navHomeButton" text="INICIO" maxWidth="Infinity" styleClass="sidebar-item, sidebar-item-active"/>
+                <Button fx:id="navIndicatorsButton" text="INDICADORES" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navRoomsButton" text="HABITACIONES" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navReservationsButton" text="RESERVAS" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navCalendarButton" text="CALENDARIO" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navGuestsButton" text="HUÉSPEDES" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navMaintenanceButton" text="MANTENIMIENTO" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navLostFoundButton" text="OBJETOS PERDIDOS" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navServicesButton" text="SERVICIOS" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navSettingsButton" text="AJUSTES" maxWidth="Infinity" styleClass="sidebar-item"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" styleClass="register-scroll">
+            <VBox styleClass="main-content">
+
+                <!-- Header -->
+                <HBox styleClass="page-header">
+                    <Label text="Inicio" styleClass="display-lg"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="newReservationButton"
+                            text="NUEVA RESERVA"
+                            onAction="#handleNewReservation"
+                            styleClass="btn-primary, btn-primary-inline"/>
+                </HBox>
+
+                <!-- Daily Summary KPIs -->
+                <GridPane hgap="24">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+                        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+                        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+                        <ColumnConstraints percentWidth="25" hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <VBox GridPane.columnIndex="0" styleClass="stat-card">
+                        <Label text="Ocupación hoy" styleClass="body-sm"/>
+                        <Label fx:id="occupancyValueLabel" text="84 %" styleClass="headline-lg"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="1" styleClass="stat-card">
+                        <Label text="Ingresos de hoy" styleClass="body-sm"/>
+                        <Label fx:id="revenueValueLabel" text="3.420 €" styleClass="headline-lg"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="2" styleClass="stat-card">
+                        <Label text="Llegadas hoy" styleClass="body-sm"/>
+                        <Label fx:id="arrivalsValueLabel" text="7" styleClass="headline-lg"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="3" styleClass="stat-card">
+                        <Label text="Salidas hoy" styleClass="body-sm"/>
+                        <Label fx:id="departuresValueLabel" text="5" styleClass="headline-lg"/>
+                    </VBox>
+                </GridPane>
+
+                <!-- Recent Reservations Table -->
+                <VBox styleClass="section-block">
+                    <Label text="Reservas recientes" styleClass="title-lg"/>
+
+                    <TableView fx:id="recentReservationsTable"
+                               prefHeight="328"
+                               minHeight="328"
+                               styleClass="hotelix-table">
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
+                        <columns>
+                            <TableColumn fx:id="guestColumn" text="Huésped"/>
+                            <TableColumn fx:id="roomColumn" text="Habitación" styleClass="col-right"/>
+                            <TableColumn fx:id="checkInColumn" text="Llegada"/>
+                            <TableColumn fx:id="checkOutColumn" text="Salida"/>
+                            <TableColumn fx:id="statusColumn" text="Estado"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

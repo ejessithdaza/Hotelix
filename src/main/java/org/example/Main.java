@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.example.controllers.ConfigureServicesController;
 import org.example.controllers.LoginController;
 import org.example.controllers.RegisterController;
 import org.example.controllers.SplashController;
@@ -60,6 +61,7 @@ public class Main extends Application {
     private void showLoginView() {
         FXMLLoader loader = switchView("/fxml/login-view.fxml", "Hotelix — Iniciar sesión");
         LoginController controller = loader.getController();
+        controller.setOnLoginSubmitHandler(this::showHomeView);
         controller.setOnRegisterHandler(this::showRegisterView);
     }
 
@@ -71,7 +73,13 @@ public class Main extends Application {
     }
 
     private void showConfigureServicesView() {
-        switchView("/fxml/configure-services-view.fxml", "Hotelix — Configurar servicios");
+        FXMLLoader loader = switchView("/fxml/configure-services-view.fxml", "Hotelix — Configurar servicios");
+        ConfigureServicesController controller = loader.getController();
+        controller.setOnSaveHandler(services -> showHomeView());
+    }
+
+    private void showHomeView() {
+        switchView("/fxml/home-view.fxml", "Hotelix — Inicio");
     }
 
     private FXMLLoader switchView(String fxmlPath, String windowTitle) {

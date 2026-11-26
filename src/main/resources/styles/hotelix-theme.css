@@ -299,3 +299,182 @@
     -fx-alignment: center-right;
     -fx-padding: 8px 0 0 0;
 }
+
+/* Dashboard Shell, Sidebar & Home Screen */
+
+.display-lg-sm {
+    -fx-font-family: "Elsie Swash Caps", serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #F5F0E6;
+    -fx-padding: 0;
+}
+
+.headline-lg {
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1B2A41;
+    -fx-padding: 0;
+}
+
+.title-lg {
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1B2A41;
+    -fx-padding: 0;
+}
+
+.app-shell {
+    -fx-background-color: #F5F0E6;
+}
+
+.sidebar {
+    -fx-background-color: #1F3A2E;
+    -fx-padding: 32px 0 32px 0;
+    -fx-spacing: 32px;
+}
+
+.sidebar-brand {
+    -fx-padding: 0 24px 0 24px;
+}
+
+.sidebar-nav {
+    -fx-spacing: 4px;
+}
+
+.sidebar-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #F5F0E6;
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+    -fx-padding: 8px 24px 8px 22px;
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-border-width: 0 0 0 2px;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.sidebar-item:hover {
+    -fx-text-fill: #C8A97E;
+}
+
+.sidebar-item-active {
+    -fx-background-color: #ECE2D1;
+    -fx-text-fill: #1B2A41;
+    -fx-border-color: transparent transparent transparent #C8A97E;
+    -fx-border-width: 0 0 0 2px;
+}
+
+.sidebar-item-active:hover {
+    -fx-text-fill: #1B2A41;
+}
+
+.main-content {
+    -fx-background-color: #F5F0E6;
+    -fx-padding: 32px;
+    -fx-spacing: 32px;
+}
+
+.page-header {
+    -fx-alignment: center-left;
+    -fx-spacing: 16px;
+}
+
+.stat-card {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 24px;
+    -fx-spacing: 8px;
+}
+
+.section-block {
+    -fx-spacing: 16px;
+}
+
+.hotelix-table {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.hotelix-table .column-header-background {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: transparent transparent #2B2622 transparent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.hotelix-table .column-header,
+.hotelix-table .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 16px 8px 16px;
+}
+
+.hotelix-table .column-header .label {
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1B2A41;
+    -fx-alignment: center-left;
+}
+
+.hotelix-table .col-right .label {
+    -fx-alignment: center-right;
+}
+
+.hotelix-table .table-row-cell {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: transparent transparent #8A8580 transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-cell-size: 56px;
+}
+
+.hotelix-table .table-row-cell:hover {
+    -fx-background-color: #ECE2D1;
+}
+
+.hotelix-table .table-row-cell:empty {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: transparent;
+}
+
+.hotelix-table .table-cell {
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+    -fx-text-fill: #2B2622;
+    -fx-padding: 0 16px 0 16px;
+    -fx-border-color: transparent;
+    -fx-alignment: center-left;
+}
+
+.hotelix-table .table-cell.cell-right {
+    -fx-alignment: center-right;
+}
+
+.status-badge-paid {
+    -fx-background-color: #1B2A41;
+    -fx-text-fill: #F5F0E6;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 13px;
+    -fx-padding: 4px 16px 4px 16px;
+    -fx-background-radius: 12px;
+}
+
+.status-badge-pending {
+    -fx-background-color: #F5F0E6;
+    -fx-text-fill: #2B2622;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 13px;
+    -fx-padding: 3px 14px 3px 14px;
+}
