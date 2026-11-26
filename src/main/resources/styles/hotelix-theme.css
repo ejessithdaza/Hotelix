@@ -478,3 +478,177 @@
     -fx-font-size: 13px;
     -fx-padding: 3px 14px 3px 14px;
 }
+
+/* Secondary Button & Occupancy Calendar Screen */
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6D2A36;
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 48px;
+    -fx-min-height: 48px;
+    -fx-padding: 0 16px 0 16px;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #ECE2D1;
+}
+
+.btn-secondary:disabled {
+    -fx-border-color: #8A8580;
+    -fx-text-fill: #8A8580;
+}
+
+.calendar-header {
+    -fx-spacing: 8px;
+}
+
+.calendar-actions {
+    -fx-alignment: center-right;
+    -fx-spacing: 8px;
+}
+
+.calendar-body {
+    -fx-spacing: 24px;
+    -fx-alignment: top-left;
+}
+
+.calendar-left {
+    -fx-spacing: 24px;
+}
+
+.calendar-card {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 16px;
+}
+
+.calendar-scroll {
+    -fx-background-color: #F5F0E6;
+    -fx-background: #F5F0E6;
+    -fx-border-color: transparent;
+}
+
+.calendar-scroll > .viewport {
+    -fx-background-color: #F5F0E6;
+}
+
+.calendar-day-header {
+    -fx-alignment: center;
+    -fx-pref-width: 40px;
+    -fx-min-width: 40px;
+    -fx-max-width: 40px;
+    -fx-padding: 2px 0 2px 0;
+}
+
+.calendar-day-today {
+    -fx-border-color: #1B2A41;
+    -fx-border-width: 2px;
+}
+
+.calendar-floor-label {
+    -fx-padding: 8px 0 4px 0;
+}
+
+.calendar-cell {
+    -fx-min-width: 40px;
+    -fx-pref-width: 40px;
+    -fx-max-width: 40px;
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-max-height: 40px;
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.cell-available {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 1px;
+    -fx-text-fill: #2B2622;
+}
+
+.cell-occupied {
+    -fx-background-color: #1B2A41;
+    -fx-text-fill: #F5F0E6;
+}
+
+.cell-reserved {
+    -fx-background-color: #ECE2D1;
+    -fx-border-color: #1B2A41;
+    -fx-border-width: 2px;
+    -fx-border-style: segments(4, 3);
+    -fx-text-fill: #1B2A41;
+}
+
+.cell-arrival {
+    -fx-background-color: #C8A97E;
+    -fx-text-fill: #1B2A41;
+}
+
+.cell-departure {
+    -fx-background-color: #1F3A2E;
+    -fx-text-fill: #F5F0E6;
+}
+
+.cell-out-of-service {
+    -fx-background-color: #6D2A36;
+    -fx-text-fill: #F5F0E6;
+}
+
+.calendar-cell-selected {
+    -fx-border-color: #6D2A36;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}
+
+.legend-swatch {
+    -fx-min-width: 24px;
+    -fx-pref-width: 24px;
+    -fx-max-width: 24px;
+    -fx-min-height: 24px;
+    -fx-pref-height: 24px;
+    -fx-max-height: 24px;
+    -fx-alignment: center;
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.legend-item {
+    -fx-alignment: center-left;
+    -fx-spacing: 8px;
+}
+
+.detail-panel {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 24px;
+    -fx-spacing: 16px;
+}
+
+.detail-fields {
+    -fx-spacing: 16px;
+}
+
+.detail-field-group {
+    -fx-spacing: 4px;
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controllers.OccupancyCalendarController"
+            styleClass="app-shell">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox prefWidth="240" minWidth="240" maxWidth="240" styleClass="sidebar">
+            <HBox styleClass="sidebar-brand">
+                <Label text="Hotelix" styleClass="display-lg-sm"/>
+            </HBox>
+
+            <VBox styleClass="sidebar-nav">
+                <Button fx:id="navHomeButton" text="INICIO" maxWidth="Infinity" onAction="#handleNavHome" styleClass="sidebar-item"/>
+                <Button fx:id="navIndicatorsButton" text="INDICADORES" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navRoomsButton" text="HABITACIONES" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navReservationsButton" text="RESERVAS" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navCalendarButton" text="CALENDARIO" maxWidth="Infinity" styleClass="sidebar-item, sidebar-item-active"/>
+                <Button fx:id="navGuestsButton" text="HUÉSPEDES" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navMaintenanceButton" text="MANTENIMIENTO" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navLostFoundButton" text="OBJETOS PERDIDOS" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navServicesButton" text="SERVICIOS" maxWidth="Infinity" styleClass="sidebar-item"/>
+                <Button fx:id="navSettingsButton" text="AJUSTES" maxWidth="Infinity" styleClass="sidebar-item"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" styleClass="register-scroll">
+            <VBox styleClass="main-content">
+
+                <!-- Header -->
+                <VBox styleClass="calendar-header">
+                    <HBox styleClass="page-header">
+                        <Label text="Calendario de ocupación" wrapText="true" styleClass="display-lg"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <HBox styleClass="calendar-actions">
+                            <Button fx:id="previousPeriodButton"
+                                    text="ANTERIOR"
+                                    onAction="#handlePreviousPeriod"
+                                    styleClass="btn-secondary"/>
+                            <Button fx:id="nextPeriodButton"
+                                    text="SIGUIENTE"
+                                    onAction="#handleNextPeriod"
+                                    styleClass="btn-secondary"/>
+                            <Button fx:id="newReservationButton"
+                                    text="NUEVA RESERVA"
+                                    onAction="#handleNewReservation"
+                                    styleClass="btn-primary, btn-primary-inline"/>
+                        </HBox>
+                    </HBox>
+                    <Label fx:id="dateRangeLabel" text="23 nov – 6 dic 2026" styleClass="body-md"/>
+                </VBox>
+
+                <!-- Calendar Grid + Detail Panel -->
+                <HBox styleClass="calendar-body">
+
+                    <!-- Left: Matrix + Legend -->
+                    <VBox HBox.hgrow="ALWAYS" styleClass="calendar-left">
+                        <VBox styleClass="calendar-card">
+                            <ScrollPane fitToHeight="true" vbarPolicy="NEVER" hbarPolicy="AS_NEEDED" styleClass="calendar-scroll">
+                                <GridPane fx:id="occupancyGrid" hgap="4" vgap="4"/>
+                            </ScrollPane>
+                        </VBox>
+
+                        <FlowPane hgap="16" vgap="8">
+                            <HBox styleClass="legend-item">
+                                <Label text="" styleClass="legend-swatch, cell-available"/>
+                                <Label text="Disponible" styleClass="body-sm"/>
+                            </HBox>
+                            <HBox styleClass="legend-item">
+                                <Label text="O" styleClass="legend-swatch, cell-occupied"/>
+                                <Label text="Ocupada" styleClass="body-sm"/>
+                            </HBox>
+                            <HBox styleClass="legend-item">
+                                <Label text="R" styleClass="legend-swatch, cell-reserved"/>
+                                <Label text="Reserva futura" styleClass="body-sm"/>
+                            </HBox>
+                            <HBox styleClass="legend-item">
+                                <Label text="L" styleClass="legend-swatch, cell-arrival"/>
+                                <Label text="Llegada hoy" styleClass="body-sm"/>
+                            </HBox>
+                            <HBox styleClass="legend-item">
+                                <Label text="S" styleClass="legend-swatch, cell-departure"/>
+                                <Label text="Salida hoy" styleClass="body-sm"/>
+                            </HBox>
+                            <HBox styleClass="legend-item">
+                                <Label text="F" styleClass="legend-swatch, cell-out-of-service"/>
+                                <Label text="Fuera de servicio" styleClass="body-sm"/>
+                            </HBox>
+                        </FlowPane>
+                    </VBox>
+
+                    <!-- Right: Detail Panel -->
+                    <VBox prefWidth="300" minWidth="300" maxWidth="300" maxHeight="-Infinity" styleClass="detail-panel">
+                        <Label text="Detalle" styleClass="title-lg"/>
+
+                        <Label fx:id="detailEmptyLabel"
+                               text="Selecciona una casilla para ver la reserva"
+                               wrapText="true"
+                               styleClass="body-md"/>
+
+                        <VBox fx:id="detailContentBox" visible="false" managed="false" styleClass="detail-fields">
+                            <VBox styleClass="detail-field-group">
+                                <Label text="Habitación" styleClass="body-sm"/>
+                                <Label fx:id="detailRoomLabel" text="—" styleClass="label-md"/>
+                            </VBox>
+                            <VBox styleClass="detail-field-group">
+                                <Label text="Huésped" styleClass="body-sm"/>
+                                <Label fx:id="detailGuestLabel" text="—" wrapText="true" styleClass="label-md"/>
+                            </VBox>
+                            <VBox styleClass="detail-field-group">
+                                <Label text="Fechas" styleClass="body-sm"/>
+                                <Label fx:id="detailDatesLabel" text="—" wrapText="true" styleClass="label-md"/>
+                            </VBox>
+                            <VBox styleClass="detail-field-group">
+                                <Label text="Estado" styleClass="body-sm"/>
+                                <Label fx:id="detailStatusLabel" text="—" styleClass="label-md"/>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

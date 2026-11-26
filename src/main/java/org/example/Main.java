@@ -8,7 +8,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.example.controllers.ConfigureServicesController;
+import org.example.controllers.HomeController;
 import org.example.controllers.LoginController;
+import org.example.controllers.OccupancyCalendarController;
 import org.example.controllers.RegisterController;
 import org.example.controllers.SplashController;
 import org.example.ui.FontRegistry;
@@ -79,7 +81,15 @@ public class Main extends Application {
     }
 
     private void showHomeView() {
-        switchView("/fxml/home-view.fxml", "Hotelix — Inicio");
+        FXMLLoader loader = switchView("/fxml/home-view.fxml", "Hotelix — Inicio");
+        HomeController controller = loader.getController();
+        controller.setOnNavigateCalendarHandler(this::showOccupancyCalendarView);
+    }
+
+    private void showOccupancyCalendarView() {
+        FXMLLoader loader = switchView("/fxml/occupancy-calendar-view.fxml", "Hotelix — Calendario de ocupación");
+        OccupancyCalendarController controller = loader.getController();
+        controller.setOnNavigateHomeHandler(this::showHomeView);
     }
 
     private FXMLLoader switchView(String fxmlPath, String windowTitle) {
