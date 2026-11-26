@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+    Generated from hotelix_hu_spedes/code.html
+    Pantalla de Huéspedes — layout de dos columnas: tabla a la izquierda, panel de detalle a la derecha.
+-->
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controllers.GuestsController"
+            styleClass="app-shell">
+
+    <!-- ═══════════════════ SIDEBAR ═══════════════════ -->
+    <left>
+        <VBox prefWidth="240" minWidth="240" maxWidth="240" styleClass="sidebar">
+            <HBox styleClass="sidebar-brand">
+                <Label text="Hotelix" styleClass="display-lg-sm"/>
+            </HBox>
+            <VBox styleClass="sidebar-nav">
+                <Button fx:id="navHomeButton"         text="INICIO"            maxWidth="Infinity" onAction="#handleNavHome"         styleClass="sidebar-item"/>
+                <Button fx:id="navIndicatorsButton"   text="INDICADORES"       maxWidth="Infinity"                                  styleClass="sidebar-item"/>
+                <Button fx:id="navRoomsButton"        text="HABITACIONES"      maxWidth="Infinity" onAction="#handleNavRooms"        styleClass="sidebar-item"/>
+                <Button fx:id="navReservationsButton" text="RESERVAS"          maxWidth="Infinity" onAction="#handleNavReservations" styleClass="sidebar-item"/>
+                <Button fx:id="navCalendarButton"     text="CALENDARIO"        maxWidth="Infinity" onAction="#handleNavCalendar"     styleClass="sidebar-item"/>
+                <Button fx:id="navGuestsButton"       text="HUÉSPEDES"         maxWidth="Infinity"                                  styleClass="sidebar-item, sidebar-item-active"/>
+                <Button fx:id="navMaintenanceButton"  text="MANTENIMIENTO"     maxWidth="Infinity"                                  styleClass="sidebar-item"/>
+                <Button fx:id="navLostFoundButton"    text="OBJETOS PERDIDOS"  maxWidth="Infinity"                                  styleClass="sidebar-item"/>
+                <Button fx:id="navServicesButton"     text="SERVICIOS"         maxWidth="Infinity"                                  styleClass="sidebar-item"/>
+                <Button fx:id="navSettingsButton"     text="AJUSTES"           maxWidth="Infinity"                                  styleClass="sidebar-item"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- ═══════════════════ CONTENIDO PRINCIPAL ═══════════════════ -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" styleClass="register-scroll">
+            <VBox styleClass="main-content" spacing="16">
+
+                <!-- Header -->
+                <HBox styleClass="page-header" alignment="CENTER_LEFT">
+                    <Label text="Huéspedes" styleClass="display-lg"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="newGuestButton"
+                            text="NUEVO HUÉSPED"
+                            onAction="#handleNewGuest"
+                            styleClass="btn-primary, btn-primary-inline"/>
+                </HBox>
+
+                <!-- Filtros -->
+                <GridPane hgap="16">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                        <ColumnConstraints minWidth="240" prefWidth="240" maxWidth="240"/>
+                    </columnConstraints>
+
+                    <VBox GridPane.columnIndex="0" styleClass="form-group-compact">
+                        <Label text="Buscar por nombre o correo" styleClass="label-md"/>
+                        <TextField fx:id="searchField"
+                                   promptText="Ej. Sofía o correo.es"
+                                   styleClass="input-field"/>
+                    </VBox>
+
+                    <VBox GridPane.columnIndex="1" styleClass="form-group-compact">
+                        <Label text="Preferencia" styleClass="label-md"/>
+                        <ComboBox fx:id="preferenceFilterCombo"
+                                  maxWidth="Infinity"
+                                  styleClass="hotelix-select"/>
+                    </VBox>
+                </GridPane>
+
+                <!-- Resumen -->
+                <Label fx:id="summaryLabel"
+                       text="7 huéspedes · 3 con preferencias de accesibilidad"
+                       styleClass="body-sm"/>
+
+                <!-- Layout de dos columnas: tabla + panel detalle -->
+                <HBox spacing="24" VBox.vgrow="ALWAYS">
+
+                    <!-- ── Tabla de huéspedes ── -->
+                    <VBox HBox.hgrow="ALWAYS" spacing="8">
+                        <VBox styleClass="table-card">
+                            <TableView fx:id="guestsTable"
+                                       prefHeight="600"
+                                       minHeight="400"
+                                       styleClass="hotelix-table">
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                </columnResizePolicy>
+                                <columns>
+                                    <TableColumn fx:id="nameColumn"      text="Nombre"       prefWidth="150"/>
+                                    <TableColumn fx:id="emailColumn"     text="Correo"       prefWidth="200"/>
+                                    <TableColumn fx:id="phoneColumn"     text="Teléfono"     prefWidth="140"/>
+                                    <TableColumn fx:id="staysColumn"     text="Estancias"    prefWidth="85"  styleClass="col-right"/>
+                                    <TableColumn fx:id="lastVisitColumn" text="Última visita" prefWidth="120"/>
+                                    <TableColumn fx:id="prefsColumn"     text="Preferencias" prefWidth="90"  styleClass="col-right"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                        <Label fx:id="showingLabel"
+                               text="Mostrando 7 de 7 huéspedes"
+                               styleClass="body-sm"/>
+                    </VBox>
+
+                    <!-- ── Panel de detalle del huésped seleccionado ── -->
+                    <VBox fx:id="detailPanel"
+                          prefWidth="320" minWidth="320" maxWidth="320"
+                          spacing="16"
+                          style="-fx-background-color: #F5F0E6; -fx-border-color: #8A8580; -fx-border-width: 2; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 24;">
+
+                        <!-- Nombre del huésped -->
+                        <Label fx:id="detailName" text="Sofía Herrera" styleClass="title-lg"/>
+
+                        <!-- Correo y teléfono -->
+                        <VBox spacing="12">
+                            <VBox spacing="2">
+                                <Label text="Correo" styleClass="body-sm"/>
+                                <Label fx:id="detailEmail" text="sofia.herrera@correo.es" styleClass="label-md"/>
+                            </VBox>
+                            <VBox spacing="2">
+                                <Label text="Teléfono" styleClass="body-sm"/>
+                                <Label fx:id="detailPhone" text="+34 612 000 777" styleClass="label-md"/>
+                            </VBox>
+                        </VBox>
+
+                        <!-- Preferencias (checkboxes) -->
+                        <VBox spacing="8">
+                            <Label text="Preferencias" styleClass="label-md"/>
+                            <CheckBox fx:id="prefElevatorCheck"  text="Lejos del ascensor"/>
+                            <CheckBox fx:id="prefBreakfastCheck" text="Desayuno incluido"/>
+                            <CheckBox fx:id="prefBedCheck"       text="Cama específica"/>
+                            <CheckBox fx:id="prefAccessCheck"    text="Accesibilidad"/>
+                            <Label text="Se muestran como sugerencia al crear una reserva. No asignan habitación automáticamente."
+                                   styleClass="body-sm" wrapText="true"/>
+                        </VBox>
+
+                        <!-- Historial -->
+                        <VBox spacing="6">
+                            <Label text="Historial" styleClass="label-md"/>
+                            <VBox fx:id="historyBox" spacing="4"/>
+                        </VBox>
+
+                        <!-- Botones de acción -->
+                        <GridPane hgap="8">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                                <ColumnConstraints hgrow="ALWAYS"/>
+                            </columnConstraints>
+                            <Button GridPane.columnIndex="0" text="EDITAR"  maxWidth="Infinity"
+                                    onAction="#handleEditGuest"  styleClass="btn-secondary"/>
+                            <Button GridPane.columnIndex="1" text="GUARDAR" maxWidth="Infinity"
+                                    onAction="#handleSaveGuest"  styleClass="btn-primary"/>
+                        </GridPane>
+                    </VBox>
+
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

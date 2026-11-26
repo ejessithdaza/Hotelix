@@ -12,6 +12,7 @@ import org.example.controllers.HomeController;
 import org.example.controllers.LoginController;
 import org.example.controllers.OccupancyCalendarController;
 import org.example.controllers.RegisterController;
+import org.example.controllers.GuestsController;
 import org.example.controllers.ReservationsController;
 import org.example.controllers.RoomsController;
 import org.example.controllers.SplashController;
@@ -88,6 +89,7 @@ public class Main extends Application {
         controller.setOnNavigateRoomsHandler(this::showRoomsView);
         controller.setOnNavigateReservationsHandler(this::showReservationsView);
         controller.setOnNavigateCalendarHandler(this::showOccupancyCalendarView);
+        controller.setOnNavigateGuestsHandler(this::showGuestsView);
     }
 
     private void showRoomsView() {
@@ -96,6 +98,7 @@ public class Main extends Application {
         controller.setOnNavigateHomeHandler(this::showHomeView);
         controller.setOnNavigateReservationsHandler(this::showReservationsView);
         controller.setOnNavigateCalendarHandler(this::showOccupancyCalendarView);
+        controller.setOnNavigateGuestsHandler(this::showGuestsView);
     }
 
     private void showReservationsView() {
@@ -103,6 +106,16 @@ public class Main extends Application {
         ReservationsController controller = loader.getController();
         controller.setOnNavigateHomeHandler(this::showHomeView);
         controller.setOnNavigateRoomsHandler(this::showRoomsView);
+        controller.setOnNavigateCalendarHandler(this::showOccupancyCalendarView);
+        controller.setOnNavigateGuestsHandler(this::showGuestsView);
+    }
+
+    private void showGuestsView() {
+        FXMLLoader loader = switchView("/fxml/guests-view.fxml", "Hotelix — Huéspedes");
+        GuestsController controller = loader.getController();
+        controller.setOnNavigateHomeHandler(this::showHomeView);
+        controller.setOnNavigateRoomsHandler(this::showRoomsView);
+        controller.setOnNavigateReservationsHandler(this::showReservationsView);
         controller.setOnNavigateCalendarHandler(this::showOccupancyCalendarView);
     }
 
@@ -112,6 +125,7 @@ public class Main extends Application {
         controller.setOnNavigateHomeHandler(this::showHomeView);
         controller.setOnNavigateRoomsHandler(this::showRoomsView);
         controller.setOnNavigateReservationsHandler(this::showReservationsView);
+        controller.setOnNavigateGuestsHandler(this::showGuestsView);
     }
 
     private FXMLLoader switchView(String fxmlPath, String windowTitle) {

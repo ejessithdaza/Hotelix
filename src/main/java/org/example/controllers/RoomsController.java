@@ -71,6 +71,7 @@ public class RoomsController {
     private Runnable onNavigateHomeHandler;
     private Runnable onNavigateReservationsHandler;
     private Runnable onNavigateCalendarHandler;
+    private Runnable onNavigateGuestsHandler;
     private Runnable onNewRoomHandler;
     private Consumer<RoomRow> onEditRoomHandler;
 
@@ -251,6 +252,13 @@ public class RoomsController {
     }
 
     @FXML
+    private void handleNavGuests() {
+        if (onNavigateGuestsHandler != null) {
+            onNavigateGuestsHandler.run();
+        }
+    }
+
+    @FXML
     private void handleNewRoom() {
         if (onNewRoomHandler != null) {
             onNewRoomHandler.run();
@@ -267,6 +275,10 @@ public class RoomsController {
 
     public void setOnNavigateCalendarHandler(Runnable onNavigateCalendarHandler) {
         this.onNavigateCalendarHandler = onNavigateCalendarHandler;
+    }
+
+    public void setOnNavigateGuestsHandler(Runnable handler) {
+        this.onNavigateGuestsHandler = handler;
     }
 
     public void setOnNewRoomHandler(Runnable onNewRoomHandler) {
