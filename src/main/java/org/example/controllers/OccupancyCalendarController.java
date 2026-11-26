@@ -69,6 +69,7 @@ public class OccupancyCalendarController {
     private Button selectedCellButton;
     private Runnable onNavigateHomeHandler;
     private Runnable onNavigateRoomsHandler;
+    private Runnable onNavigateReservationsHandler;
     private Runnable onNewReservationHandler;
 
     private final Map<String, List<String>> sampleSchedule = createSampleSchedule();
@@ -221,6 +222,13 @@ public class OccupancyCalendarController {
     }
 
     @FXML
+    private void handleNavReservations() {
+        if (onNavigateReservationsHandler != null) {
+            onNavigateReservationsHandler.run();
+        }
+    }
+
+    @FXML
     private void handleNewReservation() {
         if (onNewReservationHandler != null) {
             onNewReservationHandler.run();
@@ -233,6 +241,10 @@ public class OccupancyCalendarController {
 
     public void setOnNavigateRoomsHandler(Runnable onNavigateRoomsHandler) {
         this.onNavigateRoomsHandler = onNavigateRoomsHandler;
+    }
+
+    public void setOnNavigateReservationsHandler(Runnable onNavigateReservationsHandler) {
+        this.onNavigateReservationsHandler = onNavigateReservationsHandler;
     }
 
     public void setOnNewReservationHandler(Runnable onNewReservationHandler) {

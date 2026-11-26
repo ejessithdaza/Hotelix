@@ -731,3 +731,15 @@
     -fx-padding: 4px 16px 4px 16px;
     -fx-background-radius: 12px;
 }
+
+.status-badge-cancelled {
+    -fx-background-color: #F5F0E6;
+    -fx-text-fill: #6D2A36;
+    -fx-border-color: #6D2A36;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 13px;
+    -fx-padding: 3px 14px 3px 14px;
+}
