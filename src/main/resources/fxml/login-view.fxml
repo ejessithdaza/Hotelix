@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.controllers.LoginController"
+           styleClass="login-root">
+
+    <VBox maxWidth="420" prefWidth="420" maxHeight="-Infinity" styleClass="login-card">
+
+        <!-- Header -->
+        <VBox styleClass="login-header">
+            <Label text="Hotelix" styleClass="display-lg"/>
+            <Region styleClass="brand-divider"/>
+            <Label text="Iniciar sesión" styleClass="display-lg"/>
+        </VBox>
+
+        <!-- Form -->
+        <VBox styleClass="login-form">
+            <VBox styleClass="form-group">
+                <Label text="Correo electrónico" styleClass="label-md"/>
+                <TextField fx:id="emailField"
+                           promptText="recepcion@hotelix.es"
+                           styleClass="input-field"/>
+            </VBox>
+
+            <VBox styleClass="form-group">
+                <Label text="Contraseña" styleClass="label-md"/>
+                <PasswordField fx:id="passwordField"
+                               promptText="••••••••"
+                               styleClass="input-field"/>
+            </VBox>
+
+            <CheckBox fx:id="rememberCheckBox"
+                      text="Recordarme"
+                      styleClass="hotelix-checkbox"/>
+
+            <Button fx:id="loginButton"
+                    text="INICIAR SESIÓN"
+                    maxWidth="Infinity"
+                    defaultButton="true"
+                    onAction="#handleLogin"
+                    styleClass="btn-primary"/>
+        </VBox>
+
+        <!-- Footer -->
+        <HBox styleClass="login-footer">
+            <Label text="¿No tienes cuenta?" styleClass="body-md"/>
+            <Hyperlink fx:id="registerLink"
+                       text="Regístrate"
+                       onAction="#handleRegister"
+                       styleClass="link-burgundy"/>
+        </HBox>
+
+    </VBox>
+
+</StackPane>

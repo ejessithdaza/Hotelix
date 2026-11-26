@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Huéspedes</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <div class="min-h-[1024px] w-full bg-ivory grid grid-cols-[240px_1fr]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <aside class="min-h-[1024px] bg-forest-green text-ivory py-xl flex flex-col gap-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="px-lg">
+        <span data-design-text-token="display-lg-mobile" class="font-display text-display-lg-mobile text-ivory">Hotelix</span>
+      </div>
+
+      <nav aria-label="Navegación principal" class="flex flex-col gap-xs">
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Inicio</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Indicadores</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Habitaciones</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Reservas</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Calendario</a>
+        <a href="#" aria-current="page" data-design-text-token="label-md" class="block px-lg py-sm bg-camel-tint text-deep-navy border-l-2 border-camel font-label text-label-md uppercase focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Huéspedes</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Mantenimiento</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Objetos perdidos</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Servicios</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Ajustes</a>
+      </nav>
+    </aside>
+
+    <main class="bg-ivory px-xl py-xl flex flex-col gap-lg min-w-0">
+      <header class="flex items-center justify-between gap-md">
+        <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg text-deep-navy m-0">Huéspedes</h1>
+
+        <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-lg bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+          <span data-design-text-token="label-md">NUEVO HUÉSPED</span>
+        </button>
+      </header>
+
+      <section aria-label="Filtros de huéspedes" class="grid grid-cols-[1fr_240px] gap-md items-end">
+        <div class="flex flex-col gap-xs">
+          <label for="guests-search" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Buscar por nombre o correo</label>
+          <input id="guests-search" type="search" placeholder="Ej. Sofía o correo.es" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal placeholder:text-stone-gray hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="guests-preference" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Preferencia</label>
+          <select id="guests-preference" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+            <option value="Todas">Todas</option>
+            <option value="Lejos del ascensor">Lejos del ascensor</option>
+            <option value="Desayuno incluido">Desayuno incluido</option>
+            <option value="Cama específica">Cama específica</option>
+            <option value="Accesibilidad">Accesibilidad</option>
+          </select>
+        </div>
+      </section>
+
+      <p data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal m-0 tabular-nums">7 huéspedes · 3 con preferencias de accesibilidad</p>
+
+      <div class="grid grid-cols-[1fr_320px] gap-lg items-start">
+        <section aria-label="Listado de huéspedes" class="min-w-0 flex flex-col gap-md">
+          <div class="w-full bg-ivory border-2 border-stone-gray rounded overflow-hidden">
+            <div class="w-full overflow-x-auto">
+              <table class="w-full border-collapse text-left">
+                <thead>
+                  <tr class="border-b-2 border-warm-charcoal">
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-sm font-label text-label-md text-deep-navy text-left whitespace-nowrap">Nombre</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-sm font-label text-label-md text-deep-navy text-left whitespace-nowrap">Correo</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-sm font-label text-label-md text-deep-navy text-left whitespace-nowrap">Teléfono</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-sm font-label text-label-md text-deep-navy text-right whitespace-nowrap">Estancias</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-sm font-label text-label-md text-deep-navy text-left whitespace-nowrap">Última visita</th>
+                    <th scope="col" data-design-text-token="label-md" class="py-md px-sm font-label text-label-md text-deep-navy text-right whitespace-nowrap">Preferencias</th>
+                  </tr>
+                </thead>
+                <tbody id="guests-tbody" class="divide-y divide-stone-gray">
+                  <tr data-name="Laura Méndez" data-email="laura.mendez@correo.es" data-phone="+34 612 000 111" data-prefs="Lejos del ascensor,Desayuno incluido" data-history="Estancia 12 de octubre · habitación 101|Estancia 3 de julio · habitación 103" class="guest-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">Laura Méndez</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">laura.mendez@correo.es</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">+34 612 000 111</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">4</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">26 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  </tr>
+
+                  <tr data-name="Marta Solís" data-email="marta.solis@correo.es" data-phone="+34 612 000 222" data-prefs="Accesibilidad" data-history="Estancia 20 de noviembre · habitación 102" class="guest-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">Marta Solís</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">marta.solis@correo.es</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">+34 612 000 222</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">25 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  </tr>
+
+                  <tr data-name="Javier Ortega" data-email="javier.ortega@correo.es" data-phone="+34 612 000 333" data-prefs="Lejos del ascensor,Cama específica,Accesibilidad" data-history="Estancia 21 de noviembre · habitación 104|Estancia 4 de septiembre · habitación 202" class="guest-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">Javier Ortega</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">javier.ortega@correo.es</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">+34 612 000 333</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">6</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">27 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">3</td>
+                  </tr>
+
+                  <tr data-name="Carmen Vidal" data-email="carmen.vidal@correo.es" data-phone="+34 612 000 444" data-prefs data-history="Estancia 15 de octubre · habitación 203" class="guest-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">Carmen Vidal</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">carmen.vidal@correo.es</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">+34 612 000 444</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">30 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">0</td>
+                  </tr>
+
+                  <tr data-name="Pablo Rey" data-email="pablo.rey@correo.es" data-phone="+34 612 000 555" data-prefs="Desayuno incluido" data-history="Estancia 19 de noviembre · habitación 204" class="guest-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">Pablo Rey</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">pablo.rey@correo.es</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">+34 612 000 555</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">3</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">22 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  </tr>
+
+                  <tr data-name="Elena Navarro" data-email="elena.navarro@correo.es" data-phone="+34 612 000 666" data-prefs data-history="Estancia 10 de julio · habitación 103" class="guest-row hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">Elena Navarro</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">elena.navarro@correo.es</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">+34 612 000 666</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">24 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">0</td>
+                  </tr>
+
+                  <tr data-name="Sofía Herrera" data-email="sofia.herrera@correo.es" data-phone="+34 612 000 777" data-prefs="Desayuno incluido,Accesibilidad" data-history="Estancia 1 de noviembre · habitación 102|Estancia 14 de agosto · habitación 204" class="guest-row bg-camel-tint border-l-2 border-deep-navy hover:bg-camel-tint cursor-pointer transition-colors duration-state-change ease-state-change">
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">Sofía Herrera</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal whitespace-nowrap">sofia.herrera@correo.es</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">+34 612 000 777</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">5</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal tabular-nums whitespace-nowrap">23 nov 2026</td>
+                    <td data-design-text-token="body-md" class="py-md px-sm font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p id="guests-showing" data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">Mostrando 7 de 7 huéspedes</p>
+        </section>
+
+        <aside aria-labelledby="guest-detail-name" class="w-full bg-ivory border-2 border-stone-gray rounded p-lg flex flex-col gap-md">
+          <h2 id="guest-detail-name" data-design-text-token="title-lg" class="font-title text-title-lg text-deep-navy m-0">Sofía Herrera</h2>
+
+          <dl class="flex flex-col gap-sm m-0">
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Correo</dt>
+              <dd id="guest-detail-email" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0">sofia.herrera@correo.es</dd>
+            </div>
+            <div class="flex flex-col gap-xs">
+              <dt data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal">Teléfono</dt>
+              <dd id="guest-detail-phone" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0 tabular-nums">+34 612 000 777</dd>
+            </div>
+          </dl>
+
+          <fieldset class="flex flex-col gap-sm border-0 p-0 m-0">
+            <legend data-design-text-token="label-md" class="font-label text-label-md text-deep-navy mb-sm">Preferencias</legend>
+
+            <label class="flex items-center gap-sm cursor-pointer">
+              <input type="checkbox" value="Lejos del ascensor" class="guest-pref-cb w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Lejos del ascensor</span>
+            </label>
+
+            <label class="flex items-center gap-sm cursor-pointer">
+              <input type="checkbox" value="Desayuno incluido" checked class="guest-pref-cb w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Desayuno incluido</span>
+            </label>
+
+            <label class="flex items-center gap-sm cursor-pointer">
+              <input type="checkbox" value="Cama específica" class="guest-pref-cb w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Cama específica</span>
+            </label>
+
+            <label class="flex items-center gap-sm cursor-pointer">
+              <input type="checkbox" value="Accesibilidad" checked class="guest-pref-cb w-md h-md bg-ivory border-2 border-stone-gray text-deep-navy checked:bg-deep-navy checked:border-deep-navy focus:ring-0 focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer" style="border-radius: 4px;">
+              <span data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Accesibilidad</span>
+            </label>
+          </fieldset>
+
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0">
+            Se muestran como sugerencia al crear una reserva. No asignan habitación automáticamente.
+          </p>
+
+          <section aria-labelledby="guest-history-title" class="flex flex-col gap-xs">
+            <h3 id="guest-history-title" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy m-0">Historial</h3>
+            <ul id="guest-detail-history" class="flex flex-col gap-xs list-none p-0 m-0">
+              <li data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Estancia 1 de noviembre · habitación 102</li>
+              <li data-design-text-token="body-md" class="font-body text-body-md text-warm-charcoal">Estancia 14 de agosto · habitación 204</li>
+            </ul>
+          </section>
+
+          <div class="grid grid-cols-2 gap-sm pt-sm">
+            <button type="button" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="h-2xl px-md bg-transparent hover:bg-camel-tint border-2 border-stone-gray text-burgundy rounded font-label text-label-md uppercase flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">EDITAR</span>
+            </button>
+
+            <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-md bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+              <span data-design-text-token="label-md">GUARDAR</span>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var searchInput = document.getElementById('guests-search');
+      var prefSelect = document.getElementById('guests-preference');
+      var rows = document.querySelectorAll('.guest-row');
+      var showingEl = document.getElementById('guests-showing');
+      var total = rows.length;
+
+      var detailName = document.getElementById('guest-detail-name');
+      var detailEmail = document.getElementById('guest-detail-email');
+      var detailPhone = document.getElementById('guest-detail-phone');
+      var detailHistory = document.getElementById('guest-detail-history');
+      var prefCheckboxes = document.querySelectorAll('.guest-pref-cb');
+
+      function applyFilters() {
+        var query = (searchInput.value || '').trim().toLowerCase();
+        var prefVal = prefSelect.value;
+        var visible = 0;
+
+        rows.forEach(function (row) {
+          var name = (row.getAttribute('data-name') || '').toLowerCase();
+          var email = (row.getAttribute('data-email') || '').toLowerCase();
+          var prefs = row.getAttribute('data-prefs') || '';
+
+          var matchesQuery = !query || name.indexOf(query) !== -1 || email.indexOf(query) !== -1;
+          var matchesPref = prefVal === 'Todas' || prefs.split(',').indexOf(prefVal) !== -1;
+
+          if (matchesQuery && matchesPref) {
+            row.classList.remove('hidden');
+            visible += 1;
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+
+        if (showingEl) {
+          showingEl.textContent = 'Mostrando ' + visible + ' de ' + total + ' huéspedes';
+        }
+      }
+
+      rows.forEach(function (row) {
+        row.addEventListener('click', function () {
+          rows.forEach(function (r) {
+            r.classList.remove('bg-camel-tint', 'border-l-2', 'border-deep-navy');
+          });
+          row.classList.add('bg-camel-tint', 'border-l-2', 'border-deep-navy');
+
+          detailName.textContent = row.getAttribute('data-name') || '';
+          detailEmail.textContent = row.getAttribute('data-email') || '';
+          detailPhone.textContent = row.getAttribute('data-phone') || '';
+
+          var activePrefs = (row.getAttribute('data-prefs') || '').split(',');
+          prefCheckboxes.forEach(function (cb) {
+            cb.checked = activePrefs.indexOf(cb.value) !== -1;
+          });
+
+          var histItems = (row.getAttribute('data-history') || '').split('|').filter(Boolean);
+          detailHistory.innerHTML = '';
+          histItems.forEach(function (entry) {
+            var li = document.createElement('li');
+            li.setAttribute('data-design-text-token', 'body-compact');
+            li.className = 'font-body text-body-md text-warm-charcoal';
+            li.textContent = entry;
+            detailHistory.appendChild(li);
+          });
+        });
+      });
+
+      searchInput.addEventListener('input', applyFilters);
+      prefSelect.addEventListener('change', applyFilters);
+    })();
+  </script>
+
+
+</body></html>

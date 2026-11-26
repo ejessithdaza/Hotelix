@@ -1,12 +1,16 @@
 package org.example;
 
+import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.example.controllers.SplashController;
 import org.example.ui.FontRegistry;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
@@ -17,6 +21,10 @@ public class Main extends Application {
 
     private static final double MIN_WINDOW_WIDTH = 1280;
     private static final double MIN_WINDOW_HEIGHT = 800;
+    private static final Duration TRANSITION_DURATION = Duration.millis(120);
+
+    private Stage primaryStage;
+    private Scene mainScene;
 
     public static void main(String[] args) {
         launch(args);
@@ -24,26 +32,52 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        this.primaryStage = stage;
         FontRegistry.loadFonts();
 
-        URL fxmlUrl = Objects.requireNonNull(
-                getClass().getResource("/fxml/splash-view.fxml"),
-                "Splash FXML resource not found"
-        );
-        FXMLLoader loader = new FXMLLoader(fxmlUrl);
-        Parent root = loader.load();
+        FXMLLoader splashLoader = createLoader("/fxml/splash-view.fxml");
+        Parent splashRoot = splashLoader.load();
+        SplashController splashController = splashLoader.getController();
 
-        Scene scene = new Scene(root, MIN_WINDOW_WIDTH, MIN_WINDOW_HEIGHT);
+        mainScene = new Scene(splashRoot, MIN_WINDOW_WIDTH, MIN_WINDOW_HEIGHT);
         URL themeUrl = Objects.requireNonNull(
                 getClass().getResource("/styles/hotelix-theme.css"),
                 "Theme CSS resource not found"
         );
-        scene.getStylesheets().add(themeUrl.toExternalForm());
+        mainScene.getStylesheets().add(themeUrl.toExternalForm());
+
+        splashController.setOnContinueHandler(this::showLoginView);
 
         stage.setTitle("Hotelix — Gestión hotelera");
         stage.setMinWidth(MIN_WINDOW_WIDTH);
         stage.setMinHeight(MIN_WINDOW_HEIGHT);
-        stage.setScene(scene);
+        stage.setScene(mainScene);
         stage.show();
+    }
+
+    private void showLoginView() {
+        try {
+            FXMLLoader loginLoader = createLoader("/fxml/login-view.fxml");
+            Parent loginRoot = loginLoader.load();
+            loginRoot.setOpacity(0.0);
+
+            mainScene.setRoot(loginRoot);
+            primaryStage.setTitle("Hotelix — Iniciar sesión");
+
+            FadeTransition fadeIn = new FadeTransition(TRANSITION_DURATION, loginRoot);
+            fadeIn.setFromValue(0.0);
+            fadeIn.setToValue(1.0);
+            fadeIn.play();
+        } catch (IOException e) {
+            throw new IllegalStateException("Unable to load login view", e);
+        }
+    }
+
+    private FXMLLoader createLoader(String fxmlPath) {
+        URL fxmlUrl = Objects.requireNonNull(
+                getClass().getResource(fxmlPath),
+                "FXML resource not found: " + fxmlPath
+        );
+        return new FXMLLoader(fxmlUrl);
     }
 }

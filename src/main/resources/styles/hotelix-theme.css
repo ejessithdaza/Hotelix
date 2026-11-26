@@ -53,3 +53,168 @@
     -fx-text-fill: #6D2A36;
     -fx-padding: 0;
 }
+
+/* Shared Design System Tokens & Components */
+
+.display-lg {
+    -fx-font-family: "Elsie Swash Caps", serif;
+    -fx-font-size: 48px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #1B2A41;
+    -fx-padding: 0;
+}
+
+.label-md {
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1B2A41;
+    -fx-padding: 0;
+}
+
+.body-md {
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #2B2622;
+    -fx-padding: 0;
+}
+
+.brand-divider {
+    -fx-background-color: #C8A97E;
+    -fx-min-width: 120px;
+    -fx-pref-width: 120px;
+    -fx-max-width: 120px;
+    -fx-min-height: 2px;
+    -fx-pref-height: 2px;
+    -fx-max-height: 2px;
+}
+
+.input-field {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-pref-height: 48px;
+    -fx-min-height: 48px;
+    -fx-max-height: 48px;
+    -fx-padding: 0 16px 0 16px;
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+    -fx-text-fill: #2B2622;
+    -fx-prompt-text-fill: #8A8580;
+}
+
+.input-field:hover {
+    -fx-border-color: #2B2622;
+}
+
+.input-field:focused {
+    -fx-border-color: #1B2A41;
+}
+
+.hotelix-checkbox {
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+    -fx-text-fill: #2B2622;
+    -fx-cursor: hand;
+}
+
+.hotelix-checkbox .box {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-pref-width: 18px;
+    -fx-pref-height: 18px;
+}
+
+.hotelix-checkbox:selected .box {
+    -fx-background-color: #1B2A41;
+    -fx-border-color: #1B2A41;
+}
+
+.hotelix-checkbox:selected .mark {
+    -fx-background-color: #F5F0E6;
+}
+
+.btn-primary {
+    -fx-background-color: #1B2A41;
+    -fx-text-fill: #F5F0E6;
+    -fx-font-family: "Arima Madurai", sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 48px;
+    -fx-min-height: 48px;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #1F3A2E;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #2B2622;
+}
+
+.btn-primary:disabled {
+    -fx-background-color: #8A8580;
+    -fx-opacity: 1.0;
+}
+
+.link-burgundy {
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 17px;
+    -fx-text-fill: #6D2A36;
+    -fx-underline: true;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.link-burgundy:hover {
+    -fx-text-fill: #1B2A41;
+}
+
+.link-burgundy:visited {
+    -fx-text-fill: #6D2A36;
+}
+
+/* Login Screen */
+
+.login-root {
+    -fx-background-color: #F5F0E6;
+    -fx-padding: 32px 16px 32px 16px;
+}
+
+.login-card {
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 32px;
+    -fx-spacing: 24px;
+}
+
+.login-header {
+    -fx-alignment: center;
+    -fx-spacing: 16px;
+}
+
+.login-form {
+    -fx-spacing: 24px;
+}
+
+.form-group {
+    -fx-spacing: 8px;
+}
+
+.login-footer {
+    -fx-alignment: center;
+    -fx-spacing: 6px;
+}

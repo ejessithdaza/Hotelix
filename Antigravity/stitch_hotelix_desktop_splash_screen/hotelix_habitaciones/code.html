@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotelix — Habitaciones</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#1B2A41',
+        'on-primary': '#F5F0E6',
+        'secondary': '#1F3A2E',
+        'on-secondary': '#F5F0E6',
+        'surface': '#F5F0E6',
+        'on-surface': '#2B2622',
+        'surface-container': '#ECE2D1',
+        'error': '#6D2A36',
+        'on-error': '#F5F0E6',
+        'outline': '#8A8580',
+        'deep-navy': '#1B2A41',
+        'forest-green': '#1F3A2E',
+        'ivory': '#F5F0E6',
+        'camel': '#C8A97E',
+        'muted-gold': '#A88B4A',
+        'burgundy': '#6D2A36',
+        'warm-charcoal': '#2B2622',
+        'stone-gray': '#8A8580',
+        'camel-tint': '#ECE2D1',
+      },
+      borderRadius: {
+        'DEFAULT': '12px',
+        'md': '12px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        'section': '80px',
+      },
+      fontFamily: {
+        'display': ['"Elsie Swash Caps"', 'sans-serif'],
+        'headline': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'title': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'label': ['"Arima Madurai"', '"Arima"', 'sans-serif'],
+        'body': ['"Maitree"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-splash': ['96px', { lineHeight: '104px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-splash-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0px', fontWeight: '400' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '0px', fontWeight: '400' }],
+        'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['19px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-md': ['17px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '700' }],
+        'label-md': ['15px', { lineHeight: '20px', letterSpacing: '0.8px', fontWeight: '700' }],
+        'label-sm': ['13px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['17px', { lineHeight: '26px', letterSpacing: '0.4px', fontWeight: '400' }],
+        'body-compact': ['15px', { lineHeight: '22px', letterSpacing: '0.2px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '20px', letterSpacing: '0.2px', fontWeight: '400' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&amp;family=Elsie+Swash+Caps&amp;family=Maitree:wght@400&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-ivory text-warm-charcoal antialiased m-0 p-0">
+  <div class="min-h-[1024px] w-full bg-ivory grid grid-cols-[240px_1fr]" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <aside class="min-h-[1024px] bg-forest-green text-ivory py-xl flex flex-col gap-xl" data-stitch-vh="min-h-[1024px]===min-h-screen">
+      <div class="px-lg">
+        <span data-design-text-token="display-lg-mobile" class="font-display text-display-lg-mobile text-ivory">Hotelix</span>
+      </div>
+
+      <nav aria-label="Navegación principal" class="flex flex-col gap-xs">
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Inicio</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Indicadores</a>
+        <a href="#" aria-current="page" data-design-text-token="label-md" class="block px-lg py-sm bg-camel-tint text-deep-navy border-l-2 border-camel font-label text-label-md uppercase focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Habitaciones</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Reservas</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Calendario</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Huéspedes</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Mantenimiento</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Objetos perdidos</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Servicios</a>
+        <a href="#" data-design-text-token="label-md" class="block px-lg py-sm text-ivory hover:text-camel font-label text-label-md uppercase transition-colors duration-state-change ease-state-change focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2">Ajustes</a>
+      </nav>
+    </aside>
+
+    <main class="bg-ivory px-xl py-xl flex flex-col gap-lg min-w-0">
+      <header class="flex items-center justify-between gap-md">
+        <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg text-deep-navy m-0">Habitaciones</h1>
+
+        <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="h-2xl px-lg bg-deep-navy hover:bg-forest-green active:bg-warm-charcoal text-ivory rounded font-label text-label-md uppercase whitespace-nowrap flex items-center justify-center focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 transition-colors duration-state-change ease-state-change cursor-pointer">
+          <span data-design-text-token="label-md">NUEVA HABITACIÓN</span>
+        </button>
+      </header>
+
+      <section aria-label="Filtros de habitaciones" class="grid grid-cols-[1fr_200px_240px] gap-md items-end">
+        <div class="flex flex-col gap-xs">
+          <label for="rooms-search" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Buscar por número</label>
+          <input id="rooms-search" type="search" placeholder="Ej. 104" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal placeholder:text-stone-gray hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="rooms-type" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Tipo</label>
+          <select id="rooms-type" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+            <option value="Todas">Todas</option>
+            <option value="Individual">Individual</option>
+            <option value="Doble">Doble</option>
+            <option value="Suite">Suite</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-xs">
+          <label for="rooms-status" data-design-text-token="label-md" class="font-label text-label-md text-deep-navy">Estado</label>
+          <select id="rooms-status" class="w-full h-2xl px-md bg-ivory border-2 border-stone-gray rounded font-body text-body-md text-warm-charcoal hover:border-warm-charcoal focus:border-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 focus:ring-0 transition-colors duration-state-change ease-state-change">
+            <option value="Todos">Todos</option>
+            <option value="Disponible">Disponible</option>
+            <option value="Ocupada">Ocupada</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Fuera de servicio">Fuera de servicio</option>
+          </select>
+        </div>
+      </section>
+
+      <p data-design-text-token="body-compact" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">8 habitaciones · 4 disponibles · 2 ocupadas · 1 en mantenimiento · 1 fuera de servicio</p>
+
+      <section aria-label="Listado de habitaciones" class="flex flex-col gap-md">
+        <div class="w-full bg-ivory border-2 border-stone-gray rounded overflow-hidden">
+          <div class="w-full overflow-x-auto">
+            <table class="w-full border-collapse text-left">
+              <thead>
+                <tr class="border-b-2 border-warm-charcoal">
+                  <th scope="col" data-design-text-token="label-md" class="py-md px-md font-label text-label-md text-deep-navy text-right">Número</th>
+                  <th scope="col" data-design-text-token="label-md" class="py-md px-md font-label text-label-md text-deep-navy text-left">Tipo</th>
+                  <th scope="col" data-design-text-token="label-md" class="py-md px-md font-label text-label-md text-deep-navy text-right">Piso</th>
+                  <th scope="col" data-design-text-token="label-md" class="py-md px-md font-label text-label-md text-deep-navy text-right">Capacidad</th>
+                  <th scope="col" data-design-text-token="label-md" class="py-md px-md font-label text-label-md text-deep-navy text-right">Tarifa por noche</th>
+                  <th scope="col" data-design-text-token="label-md" class="py-md px-md font-label text-label-md text-deep-navy text-left">Estado</th>
+                  <th scope="col" class="py-md px-md"><span class="sr-only">Acciones</span></th>
+                </tr>
+              </thead>
+              <tbody id="rooms-tbody" class="divide-y divide-stone-gray">
+                <tr data-number="101" data-type="Individual" data-status="Disponible" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">101</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Individual</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">95 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm whitespace-nowrap">Disponible</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+
+                <tr data-number="102" data-type="Doble" data-status="Ocupada" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">102</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Doble</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">140 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded bg-deep-navy text-ivory font-body text-body-sm whitespace-nowrap">Ocupada</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+
+                <tr data-number="103" data-type="Doble" data-status="Disponible" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">103</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Doble</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">140 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm whitespace-nowrap">Disponible</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+
+                <tr data-number="104" data-type="Suite" data-status="Disponible" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">104</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Suite</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">4</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">280 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm whitespace-nowrap">Disponible</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+
+                <tr data-number="201" data-type="Doble" data-status="Mantenimiento" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">201</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Doble</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">150 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded bg-camel-tint text-warm-charcoal font-body text-body-sm whitespace-nowrap">Mantenimiento</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+
+                <tr data-number="202" data-type="Suite" data-status="Fuera de servicio" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">202</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Suite</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">4</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">280 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded bg-burgundy text-ivory font-body text-body-sm whitespace-nowrap">Fuera de servicio</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+
+                <tr data-number="203" data-type="Individual" data-status="Disponible" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">203</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Individual</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">1</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">95 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded border-2 border-stone-gray bg-ivory text-warm-charcoal font-body text-body-sm whitespace-nowrap">Disponible</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+
+                <tr data-number="204" data-type="Doble" data-status="Ocupada" class="hover:bg-camel-tint transition-colors duration-state-change ease-state-change">
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">204</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal">Doble</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">2</td>
+                  <td data-design-text-token="body-md" class="py-md px-md font-body text-body-md text-warm-charcoal text-right tabular-nums">150 €</td>
+                  <td class="py-md px-md">
+                    <span data-design-text-token="body-sm" class="inline-block px-md py-xs rounded bg-deep-navy text-ivory font-body text-body-sm whitespace-nowrap">Ocupada</span>
+                  </td>
+                  <td class="py-md px-md text-right">
+                    <button type="button" data-design-text-token="body-md" class="font-body text-body-md text-burgundy underline hover:text-deep-navy focus:outline focus:outline-2 focus:outline-deep-navy focus:outline-offset-2 cursor-pointer">Editar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p id="rooms-showing" data-design-text-token="body-sm" class="font-body text-body-sm text-warm-charcoal m-0 tabular-nums">Mostrando 8 de 8 habitaciones</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var searchInput = document.getElementById('rooms-search');
+      var typeSelect = document.getElementById('rooms-type');
+      var statusSelect = document.getElementById('rooms-status');
+      var rows = document.querySelectorAll('#rooms-tbody tr');
+      var showingEl = document.getElementById('rooms-showing');
+      var total = rows.length;
+
+      function applyFilters() {
+        var query = (searchInput.value || '').trim().toLowerCase();
+        var typeVal = typeSelect.value;
+        var statusVal = statusSelect.value;
+        var visible = 0;
+
+        rows.forEach(function (row) {
+          var num = (row.getAttribute('data-number') || '').toLowerCase();
+          var type = row.getAttribute('data-type') || '';
+          var status = row.getAttribute('data-status') || '';
+
+          var matchesQuery = !query || num.indexOf(query) !== -1;
+          var matchesType = typeVal === 'Todas' || type === typeVal;
+          var matchesStatus = statusVal === 'Todos' || status === statusVal;
+
+          if (matchesQuery && matchesType && matchesStatus) {
+            row.classList.remove('hidden');
+            visible += 1;
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+
+        if (showingEl) {
+          showingEl.textContent = 'Mostrando ' + visible + ' de ' + total + ' habitaciones';
+        }
+      }
+
+      searchInput.addEventListener('input', applyFilters);
+      typeSelect.addEventListener('change', applyFilters);
+      statusSelect.addEventListener('change', applyFilters);
+    })();
+  </script>
+
+
+</body></html>
