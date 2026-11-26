@@ -247,3 +247,55 @@
 .register-submit-wrapper {
     -fx-padding: 8px 0 0 0;
 }
+
+/* Configure Services Screen */
+
+.body-sm {
+    -fx-font-family: "Maitree", serif;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #2B2622;
+    -fx-padding: 0;
+}
+
+.services-container {
+    -fx-spacing: 32px;
+}
+
+.services-header {
+    -fx-alignment: center-left;
+    -fx-spacing: 8px;
+}
+
+.services-form {
+    -fx-spacing: 24px;
+}
+
+.service-card {
+    -fx-alignment: center-left;
+    -fx-spacing: 16px;
+    -fx-padding: 16px;
+    -fx-background-color: #F5F0E6;
+    -fx-border-color: #8A8580;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+}
+
+.service-card:hover {
+    -fx-border-color: #2B2622;
+}
+
+.service-card-selected {
+    -fx-background-color: #ECE2D1;
+}
+
+.btn-primary-inline {
+    -fx-padding: 0 24px 0 24px;
+}
+
+.services-actions {
+    -fx-alignment: center-right;
+    -fx-padding: 8px 0 0 0;
+}

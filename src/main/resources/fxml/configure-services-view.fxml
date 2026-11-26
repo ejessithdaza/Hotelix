@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controllers.ConfigureServicesController"
+            fitToWidth="true"
+            fitToHeight="true"
+            hbarPolicy="NEVER"
+            styleClass="register-scroll">
+
+    <StackPane styleClass="login-root">
+        <VBox maxWidth="720" prefWidth="720" maxHeight="-Infinity" styleClass="services-container">
+
+            <!-- Header -->
+            <VBox styleClass="services-header">
+                <Label text="Configura los servicios de tu hotel"
+                       wrapText="true"
+                       styleClass="display-lg"/>
+                <Label text="Elige los servicios que ofrece tu hotel. Podrás cambiarlos más adelante en Ajustes."
+                       wrapText="true"
+                       styleClass="body-md"/>
+            </VBox>
+
+            <!-- Form -->
+            <VBox styleClass="services-form">
+                <GridPane fx:id="servicesGrid" hgap="16" vgap="16">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+                        <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <HBox fx:id="breakfastCard" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="service-card, service-card-selected">
+                        <CheckBox fx:id="breakfastCheckBox" userData="desayuno" selected="true" styleClass="hotelix-checkbox"/>
+                        <Label text="Desayuno" styleClass="body-md"/>
+                    </HBox>
+
+                    <HBox fx:id="roomServiceCard" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="service-card">
+                        <CheckBox fx:id="roomServiceCheckBox" userData="comidas-habitacion" styleClass="hotelix-checkbox"/>
+                        <Label text="Comidas a la habitación" styleClass="body-md"/>
+                    </HBox>
+
+                    <HBox fx:id="laundryCard" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="service-card">
+                        <CheckBox fx:id="laundryCheckBox" userData="lavanderia" styleClass="hotelix-checkbox"/>
+                        <Label text="Lavandería" styleClass="body-md"/>
+                    </HBox>
+
+                    <HBox fx:id="parkingCard" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="service-card">
+                        <CheckBox fx:id="parkingCheckBox" userData="estacionamiento" styleClass="hotelix-checkbox"/>
+                        <Label text="Estacionamiento" styleClass="body-md"/>
+                    </HBox>
+
+                    <HBox fx:id="gymCard" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="service-card">
+                        <CheckBox fx:id="gymCheckBox" userData="gimnasio" styleClass="hotelix-checkbox"/>
+                        <Label text="Gimnasio" styleClass="body-md"/>
+                    </HBox>
+
+                    <HBox fx:id="spaCard" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="service-card">
+                        <CheckBox fx:id="spaCheckBox" userData="spa" styleClass="hotelix-checkbox"/>
+                        <Label text="Spa" styleClass="body-md"/>
+                    </HBox>
+
+                    <HBox fx:id="airportTransferCard" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="service-card">
+                        <CheckBox fx:id="airportTransferCheckBox" userData="traslado-aeropuerto" styleClass="hotelix-checkbox"/>
+                        <Label text="Traslado al aeropuerto" styleClass="body-md"/>
+                    </HBox>
+
+                    <HBox fx:id="premiumWifiCard" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="service-card, service-card-selected">
+                        <CheckBox fx:id="premiumWifiCheckBox" userData="wifi-premium" selected="true" styleClass="hotelix-checkbox"/>
+                        <Label text="Wi-Fi premium" styleClass="body-md"/>
+                    </HBox>
+                </GridPane>
+
+                <Label fx:id="servicesCountLabel"
+                       text="2 servicios seleccionados"
+                       styleClass="body-sm"/>
+
+                <HBox styleClass="services-actions">
+                    <Button fx:id="saveButton"
+                            text="GUARDAR Y CONTINUAR"
+                            defaultButton="true"
+                            onAction="#handleSave"
+                            styleClass="btn-primary, btn-primary-inline"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </StackPane>
+
+</ScrollPane>

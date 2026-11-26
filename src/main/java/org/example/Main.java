@@ -67,6 +67,11 @@ public class Main extends Application {
         FXMLLoader loader = switchView("/fxml/register-view.fxml", "Hotelix — Crear cuenta");
         RegisterController controller = loader.getController();
         controller.setOnLoginHandler(this::showLoginView);
+        controller.setOnRegisterSubmitHandler(this::showConfigureServicesView);
+    }
+
+    private void showConfigureServicesView() {
+        switchView("/fxml/configure-services-view.fxml", "Hotelix — Configurar servicios");
     }
 
     private FXMLLoader switchView(String fxmlPath, String windowTitle) {
